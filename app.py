@@ -456,6 +456,8 @@ with tab_rep:
     
     ## 2. Commissioning Strategy: CCW & Fuel Gas System
     The 2-month window post-MC is driven by high-velocity flushing of the CCW and clean-pigging of the FG lines.
+    - **Technical Pre-requisites**: Execution of CCW Flushing and FG Pig Cleaning necessitates the absolute completion of all piping/support installation, formal punch clearance, and mandatory pressure testing.
+    - **Operational Readiness**: To ensure on-time commissioning and minimize lead-time, all temporary piping, Launchers, Receivers, and related items must be pre-fabricated and prepared. Installation of these components must proceed immediately following the completion of pressure tests.
     
     ## 3. GT Anti-Icing System (Winter Operation)
     For the target operation date of **Dec 31, 2026**, the Anti-Icing system is mandatory to prevent GT Air Intake freezing.
