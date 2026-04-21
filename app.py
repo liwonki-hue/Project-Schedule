@@ -87,11 +87,11 @@ AREA_DATA = {
     "GT #11 Installation": {"EA": 895, "DI": 4115, "Lag": 0, "Status": "Alignment (50%)"}, # Added AS/HW (+1649 DI, +518 EA)
     "HRSG #11 PR": {"EA": 173, "DI": 1131, "Lag": 2, "Status": "In Progress"},
     "Main Building Structure": {"EA": 1808, "DI": 10087, "Lag": 2, "Status": "Wait for MB Steel"}, # Added AS/HW (+1649 DI, +518 EA)
-    "Pipe Rack #3": {"EA": 925, "DI": 4311, "Lag": 2, "Status": "Wait for Civil"}, # Added AS/HW (+1649 DI, +518 EA)
-    "Pipe Rack #4": {"EA": 1118, "DI": 5574, "Lag": 2, "Status": "Wait for Civil"}, # Added AS/HW (+1649 DI, +518 EA)
-    "Pipe Rack #5": {"EA": 266, "DI": 1740, "Lag": 2, "Status": "Wait for Civil"},
-    "Pipe Rack #6": {"EA": 173, "DI": 1131, "Lag": 2, "Status": "Wait for Civil"},
-    "Pipe Rack #7": {"EA": 221, "DI": 1445, "Lag": 2, "Status": "Wait for Civil"}
+    "Pipe Rack #3": {"EA": 925, "DI": 4311, "Lag": 2, "Status": "Wait for Architectural"}, # Added AS/HW (+1649 DI, +518 EA)
+    "Pipe Rack #4": {"EA": 1118, "DI": 5574, "Lag": 2, "Status": "Wait for Architectural"}, # Added AS/HW (+1649 DI, +518 EA)
+    "Pipe Rack #5": {"EA": 266, "DI": 1740, "Lag": 2, "Status": "Wait for Architectural"},
+    "Pipe Rack #6": {"EA": 173, "DI": 1131, "Lag": 2, "Status": "Wait for Architectural"},
+    "Pipe Rack #7": {"EA": 221, "DI": 1445, "Lag": 2, "Status": "Wait for Architectural"}
 }
 TOTAL_DI = sum(d["DI"] for d in AREA_DATA.values())
 TOTAL_EA = sum(d["EA"] for d in AREA_DATA.values())
@@ -129,7 +129,7 @@ def add_print_button():
     )
 
 # --- Sidebar Controls ---
-st.sidebar.markdown('<h2 style="font-size: 1.35rem; margin-top: 0; margin-bottom: 5px;">📌 Strategy Panel</h2>', unsafe_allow_html=True)
+st.sidebar.markdown('<h2 style="font-size: 1.35rem; margin-top: 0; margin-bottom: 5px;">📌 Simulation Panel</h2>', unsafe_allow_html=True)
 
 st.sidebar.markdown('<hr style="margin: 10px 0;">', unsafe_allow_html=True)
 st.sidebar.markdown('<p style="font-weight: 600; font-size: 1.05rem; margin-bottom: 8px;">Handover Dates</p>', unsafe_allow_html=True)
@@ -260,7 +260,7 @@ with tab_dash:
     st.markdown(f"""
         <div style="background-color:#fff3e0; padding:15px; border-radius:10px; border-left:8px solid #ff9800; margin-bottom:10px;">
             <span style="font-size:1.15rem; font-weight:bold; color:#e65100;">
-                ⚠️ Major Infrastructure Constraint: Permanent Power Receiving must be completed before CCW/HW Pump operation. 
+                ⚠️ Major Constraint: Power Receiving must be completed before CCW/HW Pump operation. 
                 Energizing requires FF (Fire Fighting) & HVAC installation to prevent overheating/fire.
             </span>
         </div>
