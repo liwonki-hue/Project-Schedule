@@ -259,13 +259,13 @@ strat_bottleneck = "Main Building Structure"
 
 # --- Essential Systems Data ---
 ESSENTIAL_SYSTEMS = [
-    {"System": "Fuel Gas & FGH System", "Area": "MB / GT / FGH", "Description": "Main & Performance heater fuel.", "DI": 2480, "EA": 610, "Criticality": "Mandatory", "Remark": "Incl. Performance Heater & Final Filter"},
-    {"System": "Closed Cooling Water (CCW)", "Area": "MB / PR / PH#1 / FFC#1", "Description": "GT brg & FFC cooling.", "DI": 4120, "EA": 980, "Criticality": "Mandatory", "Remark": "PH#1 & FFC#1 Integrated"},
-    {"System": "Instrument Air (IA)", "Area": "All Areas", "Description": "Pneumatic control supply.", "DI": 1150, "EA": 290, "Criticality": "Operation", "Remark": "Air Compressors, IA Dryers"},
-    {"System": "Aux. Steam & Hot Water (AS/HW)", "Area": "PR#3/4 / MB", "Description": "Anti-Icing supply path.", "DI": 2650, "EA": 660, "Criticality": "Mandatory", "Remark": "HW Pump House & PR Pathway"},
-    {"System": "Nitrogen System (N2)", "Area": "GT Area / PR", "Description": "Purging and inerting.", "DI": 320, "EA": 90, "Criticality": "Mandatory", "Remark": "N2 Bottle Rack, Purge Panels"},
-    {"System": "GT MISC (Vents)", "Area": "Main Building", "Description": "Process gas venting.", "DI": 650, "EA": 180, "Criticality": "Mandatory", "Remark": "GT Enclosure, Vent Fans"},
-    {"System": "Demineralized Water (DW)", "Area": "Water Treatment", "Description": "Process water supply.", "DI": 2000, "EA": 480, "Criticality": "Highest", "Remark": "DW Tank & Pump Station"}
+    {"System": "Fuel Gas & FGH System", "Area": "MB / GT / FGH", "Description": "Main & Performance heater fuel.", "DI": 2480, "EA": 610, "Criticality": "Mandatory", "Equipment": "Performance Heater & Final Filter", "Remark": ""},
+    {"System": "Closed Cooling Water (CCW)", "Area": "MB / PR / PH#1 / FFC#1", "Description": "GT brg & FFC cooling.", "DI": 4120, "EA": 980, "Criticality": "Mandatory", "Equipment": "PH#1 & FFC#1 Integrated", "Remark": ""},
+    {"System": "Instrument Air (IA)", "Area": "All Areas", "Description": "Pneumatic control supply.", "DI": 1150, "EA": 290, "Criticality": "Operation", "Equipment": "Air Compressors, IA Dryers", "Remark": ""},
+    {"System": "Aux. Steam & Hot Water (AS/HW)", "Area": "PR#3/4 / MB", "Description": "Anti-Icing supply path.", "DI": 2650, "EA": 660, "Criticality": "Mandatory", "Equipment": "HW Pump House & PR Pathway", "Remark": ""},
+    {"System": "Nitrogen System (N2)", "Area": "GT Area / PR", "Description": "Purging and inerting.", "DI": 320, "EA": 90, "Criticality": "Mandatory", "Equipment": "N2 Bottle Rack, Purge Panels", "Remark": ""},
+    {"System": "GT MISC (Vents)", "Area": "Main Building", "Description": "Process gas venting.", "DI": 650, "EA": 180, "Criticality": "Mandatory", "Equipment": "GT Enclosure, Vent Fans", "Remark": ""},
+    {"System": "Demineralized Water (DW)", "Area": "Water Treatment", "Description": "Process water supply.", "DI": 2000, "EA": 480, "Criticality": "Highest", "Equipment": "DW Tank & Pump Station", "Remark": "Other Power Plant 구매 검토중"}
 ]
 
 # --- Presentation Layer ---
@@ -428,18 +428,19 @@ with tab_dash:
     f6.markdown('<div class="flow-box"><b>6. Pre-Commissioning</b><br>CCW Flushing & FG Pig Cleaning<br>(2 Months)</div>', unsafe_allow_html=True)
 
     st.subheader("✅ Essential Systems for GT #11 Start-up")
+    
+    # Matrix - Essential Systems
     df_ess = pd.DataFrame(ESSENTIAL_SYSTEMS)
     
-    # Add Total Row
-    total_di = df_ess['DI'].sum()
-    total_ea = df_ess['EA'].sum()
+    # Calculate Total
     total_row = pd.DataFrame([{
         "System": "TOTAL",
         "Area": "",
         "Description": "",
-        "DI": total_di,
-        "EA": total_ea,
+        "DI": int(df_ess["DI"].sum()),
+        "EA": int(df_ess["EA"].sum()),
         "Criticality": "",
+        "Equipment": "",
         "Remark": ""
     }])
     df_ess = pd.concat([df_ess, total_row], ignore_index=True)
@@ -447,6 +448,9 @@ with tab_dash:
     # Set index to 1, 2, 3... and empty string for TOTAL
     new_index_ess = [str(i+1) for i in range(len(df_ess)-1)] + [""]
     df_ess.index = new_index_ess
+    
+    # Rename columns for display
+    df_ess = df_ess.rename(columns={"Equipment": "Relevant Equipment"})
     
     st.table(df_ess)
 
@@ -505,16 +509,16 @@ with tab_rep:
     
     ## 5. Essential Systems & Criticality Matrix
     
-    | Essential System | Area | Description | Piping (DI) | Support (EA) | Criticality | Remark |
-    | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-    | **1. Fuel Gas & FGH** | MB/GT/FGH | Performance Heater path. | 2,480 | 610 | **Mandatory** | **JM Official Scope** |
-    | **2. CCW** | MB/PR/PH1 | Brg & FFC cooling. | 4,120 | 980 | **Mandatory** | **B0/B1 Cycle Complete** |
-    | **3. IA** | All | Instrument air supply. | 1,150 | 290 | **Operation** | IA System Final |
-    | **4. AS/HW** | PR#3/4/AB | Anti-Icing path. | 2,650 | 660 | **Mandatory** | **B0 -> B1 Distribution** |
-    | **5. N2** | GT / PR | Purging and inerting. | 320 | 90 | **Mandatory** | Purge Panels |
-    | **6. GT MISC**| MB | Gas vent & drainage. | 650 | 180 | **Mandatory** | Enclosure / Vent |
-    | **7. Demi. Water**| WT / PR | Process water supply. | 2,000 | 480 | **Highest** | **DW Tank Distribution** |
-    | **TOTAL** | - | - | **13,370** | **3,290** | - | - |
+    | Essential System | Area | Description | Piping (DI) | Support (EA) | Criticality | Relevant Equipment | Remark |
+    | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+    | **1. Fuel Gas & FGH** | MB/GT/FGH | Performance Heater path. | 2,480 | 610 | **Mandatory** | Performance Heater & Filter | |
+    | **2. CCW** | MB/PR/PH1 | Brg & FFC cooling. | 4,120 | 980 | **Mandatory** | PH#1 & FFC#1 Integrated | |
+    | **3. IA** | All | Instrument air supply. | 1,150 | 290 | **Operation** | Air Compressors, IA Dryers | |
+    | **4. AS/HW** | PR#3/4/AB | Anti-Icing path. | 2,650 | 660 | **Mandatory** | HW Pump House & PR Path | |
+    | **5. N2** | GT / PR | Purging and inerting. | 320 | 90 | **Mandatory** | N2 Bottle Rack, Purge Panels | |
+    | **6. GT MISC**| MB | Gas vent & drainage. | 650 | 180 | **Mandatory** | GT Enclosure, Vent Fans | |
+    | **7. Demi. Water**| WT / PR | Process water supply. | 2,000 | 480 | **Highest** | DW Tank & Pump Station | **Other Plant 구매 검토중** |
+    | **TOTAL** | - | - | **13,370** | **3,290** | - | - | - |
     
     > **⚠️ Volumetric Note**: Total Area Construction Volume (**23,595 DI**) differs from the **Essential Start-up Scope** above. 
     > 1. **Field Erection Only**: DI values represent site welding/installation only (excl. Shop Fab).
