@@ -265,17 +265,22 @@ ESSENTIAL_SYSTEMS = [
     {"System": "Aux. Steam & Hot Water (AS/HW)", "Area": "PR#3/4 / MB", "Description": "Anti-Icing supply path.", "DI": 2650, "EA": 660, "Criticality": "Mandatory", "Equipment": "HW Pump House & PR Pathway", "Remark": ""},
     {"System": "Nitrogen System (N2)", "Area": "GT Area / PR", "Description": "Purging and inerting.", "DI": 320, "EA": 90, "Criticality": "Mandatory", "Equipment": "N2 Bottle Rack, Purge Panels", "Remark": ""},
     {"System": "GT MISC (Vents)", "Area": "Main Building", "Description": "Process gas venting.", "DI": 650, "EA": 180, "Criticality": "Mandatory", "Equipment": "GT Enclosure, Vent Fans", "Remark": ""},
-    {"System": "Demineralized Water (DW)", "Area": "Water Treatment", "Description": "Process water supply.", "DI": 2000, "EA": 480, "Criticality": "Highest", "Equipment": "DW Tank & Pump Station", "Remark": "Other Power Plant 구매 검토중"}
+    {"System": "Demineralized Water (DW)", "Area": "Water Treatment", "Description": "Process water supply.", "DI": 2000, "EA": 480, "Criticality": "Highest", "Equipment": "DW Tank & Pump Station", "Remark": "Under review for sourcing from another power plant."}
 ]
 
 # --- Presentation Layer ---
 tab_dash, tab_rep = st.tabs(["📊 Dashboard View", "📋 Technical Report"])
 
 with tab_dash:
-    # Custom CSS for Table Alignment
+    # Custom CSS for Table Alignment & Column Widths
     st.markdown("""
         <style>
             th, td { text-align: center !important; }
+            /* Expand DI and EA columns (typically 5th and 6th in these tables) */
+            th:nth-child(5), td:nth-child(5), 
+            th:nth-child(6), td:nth-child(6) { 
+                min-width: 95px !important; 
+            }
         </style>
     """, unsafe_allow_html=True)
     
