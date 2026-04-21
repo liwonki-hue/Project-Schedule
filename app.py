@@ -318,8 +318,18 @@ with tab_dash:
         # --- Enhanced Chart: Add Start/Finish Labels ---
         fig = px.timeline(df, x_start="Handover", x_end="Pressure Test Finish", y="Area", 
                           color="Float", color_continuous_scale=["#ef4444", "#22c55e"], height=250)
-        fig.update_yaxes(autorange="reversed") 
-        fig.add_vline(x=pd.to_datetime(MC_TARGET).timestamp() * 1000, line_dash="dash", line_color="red")
+        # Define Key Milestones
+        mc_date = pd.to_datetime(MC_TARGET)
+        pr_date = mc_date - datetime.timedelta(days=16) # Power Receiving: 16 days before MC for logic
+        
+        fig.add_vline(x=mc_date.timestamp() * 1000, line_dash="dash", line_color="red", line_width=2)
+        fig.add_vline(x=pr_date.timestamp() * 1000, line_dash="dash", line_color="blue", line_width=2)
+        
+        # Add Milestone Labels on TOP
+        fig.add_annotation(x=mc_date, y=1.1, yref="paper", text=f"<b>MC: {mc_date.strftime('%m/%d')}</b>", 
+                           showarrow=False, font=dict(color="red", size=12))
+        fig.add_annotation(x=pr_date, y=1.1, yref="paper", text=f"<b>Power: {pr_date.strftime('%m/%d')}</b>", 
+                           showarrow=False, font=dict(color="blue", size=12))
         
         # Add text labels for Start and Finish next to the bars
         for idx, row in df.iterrows():
@@ -331,15 +341,20 @@ with tab_dash:
                 font=dict(size=11, color="#334155")
             )
             # Finish Date (Right)
+            if row["Pressure Test Finish"] > mc_date: # Highlight delay
+                f_color = "#ef4444"
+            else:
+                f_color = "#334155"
+                
             fig.add_annotation(
                 x=row["Pressure Test Finish"], y=row["Area"],
                 text=f"<b>{row['Pressure Test Finish'].strftime('%m/%d')}</b>",
                 showarrow=False, xanchor='left', xshift=10,
-                font=dict(size=11, color="#334155")
+                font=dict(size=11, color=f_color)
             )
 
         fig.update_layout(
-            margin=dict(l=0, r=40, t=0, b=0), # Revert to compact margins
+            margin=dict(l=0, r=40, t=30, b=0), # Added top margin for labels
             xaxis_title=None, yaxis_title=None, 
             showlegend=False,
             coloraxis_showscale=False # Remove color bar legend
