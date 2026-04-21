@@ -265,7 +265,7 @@ ESSENTIAL_SYSTEMS = [
     {"System": "Aux. Steam & Hot Water (AS/HW)", "Area": "PR#3/4 / MB", "Description": "Anti-Icing supply path.", "DI": 2650, "EA": 660, "Criticality": "Mandatory", "Equipment": "HW Pump House & PR Pathway", "Remark": ""},
     {"System": "Nitrogen System (N2)", "Area": "GT Area / PR", "Description": "Purging and inerting.", "DI": 320, "EA": 90, "Criticality": "Mandatory", "Equipment": "N2 Bottle Rack, Purge Panels", "Remark": ""},
     {"System": "GT MISC (Vents)", "Area": "Main Building", "Description": "Process gas venting.", "DI": 650, "EA": 180, "Criticality": "Mandatory", "Equipment": "GT Enclosure, Vent Fans", "Remark": ""},
-    {"System": "Demineralized Water (DW)", "Area": "Water Treatment", "Description": "Process water supply.", "DI": 2000, "EA": 480, "Criticality": "Highest", "Equipment": "DW Tank & Pump Station", "Remark": "Under review for sourcing from another power plant."}
+    {"System": "Demineralized Water (DW)", "Area": "Water Treatment", "Description": "Process water supply.", "DI": 2000, "EA": 480, "Criticality": "Highest", "Equipment": "DW Tank & Pump Station", "Remark": "Under review for sourcing from other power plant."}
 ]
 
 # --- Presentation Layer ---
@@ -522,7 +522,7 @@ with tab_rep:
     | **4. AS/HW** | PR#3/4/AB | Anti-Icing path. | 2,650 | 660 | **Mandatory** | HW Pump House & PR Path | |
     | **5. N2** | GT / PR | Purging and inerting. | 320 | 90 | **Mandatory** | N2 Bottle Rack, Purge Panels | |
     | **6. GT MISC**| MB | Gas vent & drainage. | 650 | 180 | **Mandatory** | GT Enclosure, Vent Fans | |
-    | **7. Demi. Water**| WT / PR | Process water supply. | 2,000 | 480 | **Highest** | DW Tank & Pump Station | **Other Plant 구매 검토중** |
+    | **7. Demi. Water**| WT / PR | Process water supply. | 2,000 | 480 | **Highest** | DW Tank & Pump Station | **Under review for sourcing from other power plant.** |
     | **TOTAL** | - | - | **13,370** | **3,290** | - | - | - |
     
     > **⚠️ Volumetric Note**: Total Area Construction Volume (**23,595 DI**) differs from the **Essential Start-up Scope** above. 
