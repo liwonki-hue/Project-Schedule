@@ -324,10 +324,10 @@ with tab_dash:
         mc_date = pd.to_datetime(MC_TARGET)
         pr_date = mc_date - datetime.timedelta(days=16) # Power Receiving: 16 days before MC for logic
         
-        # Add Milestone Vertical Lines (Extended to reach labels)
-        fig.add_shape(type="line", x0=pr_date, x1=pr_date, y0=0, y1=1.16, yref="paper",
+        # Add Milestone Vertical Lines (Adjusted to stop just below labels)
+        fig.add_shape(type="line", x0=pr_date, x1=pr_date, y0=0, y1=1.10, yref="paper",
                       line=dict(color="blue", width=2, dash="dash"))
-        fig.add_shape(type="line", x0=mc_date, x1=mc_date, y0=0, y1=1.06, yref="paper",
+        fig.add_shape(type="line", x0=mc_date, x1=mc_date, y0=0, y1=1.01, yref="paper",
                       line=dict(color="red", width=2, dash="dash"))
         
         # Add Milestone Labels on TOP (Center-aligned on lines, staggered heights to prevent overlap)
