@@ -546,13 +546,19 @@ with tab_rep:
     ## 7. Strategic Risk & Implementation Constraints
     
     ### A. Piping Isolation & Loop Integrity (Flushing Requirements)
-    GT #11 Early Power requires functional MB utility lines. The integrated design normally requires all units to be interconnected. Without physical isolation, mediums will disperse through Units #2~4 header paths, rendering independent pressurized flushing impossible. Installation of **Blind Flanges or Isolation Valves** at Unit #1 Tees is mandatory to create a temporary **Closed System** for loop integrity.
+    - GT #11 Early Power requires functional MB utility lines. The integrated design normally requires all units to be interconnected.
+    - Without physical isolation, mediums will disperse through Units #2~4 header paths, rendering independent pressurized flushing impossible.
+    - Installation of **Blind Flanges or Isolation Valves** at Unit #1 Tees is mandatory to create a temporary **Closed System** for loop integrity.
 
     ### B. Operational Restrictions (Hot Work Prohibition)
-    Introduction of Fuel Gas (FG) for GT #11 operation will trigger strict safe-work protocols in the Main Building. Mandatory **No-Hot-Work Restrictions** will indefinitely suspend the installation of structural and piping systems for Units #2~4. Finalize all critical header welding prior to gas admission and formally notify the client of the 'Dead Zone' for remaining expansion works.
+    - Introduction of Fuel Gas (FG) for GT #11 operation will trigger strict safe-work protocols in the Main Building.
+    - Mandatory **No-Hot-Work Restrictions** will indefinitely suspend the installation of structural and piping systems for Units #2~4.
+    - Finalize all critical header welding prior to gas admission and formally notify the client of the 'Dead Zone' for remaining expansion works.
 
     ### C. Impact on Total Project Milestone (Design Sync Risk)
-    Isolating Unit #1 for early startup is a significant deviation from the core integrated Power Plant Design Concept. Severe resource inefficiencies and spatial conflicts will cause a **minimum 3-month delay** in total project completion. Formally communicate the **Absolute Risk to Total Project COD** to the client, noting that GT #11 must eventually be **shut down** for future final integration.
+    - Isolating Unit #1 for early startup is a significant deviation from the core integrated Power Plant Design Concept.
+    - Severe resource inefficiencies and spatial conflicts will cause a **minimum 3-month delay** in total project completion.
+    - Formally communicate the **Absolute Risk to Total Project COD** to the client, noting that GT #11 must eventually be **shut down** for future final integration.
     
     ---
     *Disclaimer: Report updated to reflect Dec 31 Operation basis, Anti-Icing Mandatory requirement, and Strategic Risks associated with early Unit #1 power generation.*
