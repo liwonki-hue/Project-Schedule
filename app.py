@@ -325,11 +325,11 @@ with tab_dash:
         fig.add_vline(x=mc_date.timestamp() * 1000, line_dash="dash", line_color="red", line_width=2)
         fig.add_vline(x=pr_date.timestamp() * 1000, line_dash="dash", line_color="blue", line_width=2)
         
-        # Add Milestone Labels on TOP (Offset to prevent overlapping)
-        fig.add_annotation(x=pr_date, y=1.18, yref="paper", text=f"<b>Power: {pr_date.strftime('%m/%d')}</b>", 
-                           showarrow=False, font=dict(color="blue", size=11), xanchor="right", xshift=-5)
+        # Add Milestone Labels on TOP (Center-aligned on lines, staggered heights to prevent overlap)
+        fig.add_annotation(x=pr_date, y=1.18, yref="paper", text=f"<b>Power Receiving: {pr_date.strftime('%m/%d')}</b>", 
+                           showarrow=False, font=dict(color="blue", size=11), xanchor="center", xshift=0)
         fig.add_annotation(x=mc_date, y=1.08, yref="paper", text=f"<b>MC: {mc_date.strftime('%m/%d')}</b>", 
-                           showarrow=False, font=dict(color="red", size=11), xanchor="left", xshift=5)
+                           showarrow=False, font=dict(color="red", size=11), xanchor="center", xshift=0)
         
         # Add text labels for Start and Finish next to the bars
         for idx, row in df.iterrows():
