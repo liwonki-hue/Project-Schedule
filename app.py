@@ -25,8 +25,8 @@ st.markdown("""
     }
     
     /* Report Font Adjustments: Titles 1.1x larger than baseline */
-    .report-card h2 { font-size: 1.45rem !important; margin-top: 15px !important; color: #1e293b !important; }
-    .report-card h3 { font-size: 1.25rem !important; margin-top: 10px !important; color: #475569 !important; }
+    .report-card h2 { font-size: 1.45rem !important; margin-top: 5px !important; margin-bottom: 5px !important; color: #1e293b !important; }
+    .report-card h3 { font-size: 1.25rem !important; margin-top: 5px !important; margin-bottom: 2px !important; color: #475569 !important; }
     .report-card p, .report-card li { font-size: 1.2rem !important; line-height: 1.1 !important; }
     
     /* Enhanced Table Styling */
@@ -478,7 +478,7 @@ with tab_rep:
     h_c1, h_c2 = st.columns([8.5, 1.5])
     with h_c1:
         st.markdown("<h1 style='margin-bottom:0; padding-bottom:0;'>GT #11 EARLY POWER PIPING REPORT</h1>", unsafe_allow_html=True)
-        # Date and Milestone line removed
+        st.markdown("<hr style='margin: 0; padding: 0;'>", unsafe_allow_html=True)
     with h_c2:
         st.markdown("<div style='text-align:right; margin-top:20px;'>", unsafe_allow_html=True)
         add_print_button()
@@ -487,7 +487,7 @@ with tab_rep:
     st.markdown("""
     <div class="report-card">
     
-    ---
+    
     
     ## 1. Project Sequence & Major Constraints
     The GT #11 startup is governed not only by piping progress but also by critical infrastructure and safety prerequisites.
