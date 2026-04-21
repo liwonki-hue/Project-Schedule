@@ -519,11 +519,11 @@ with tab_rep:
     
     | Essential System | Area | Description | Piping (DI) | Support (EA) | Criticality | Relevant Equipment | Remark |
     | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-    | **1. Fuel Gas & FGH** | MB/GT/FGH | Performance Heater path. | 2,480 | 610 | **Mandatory** | FGSS System, Performance Heater & Filter | |
+    | **1. Fuel Gas & FGH** | MB/GT/FGH | Performance Heater path. | 2,480 | 610 | **Mandatory** | FGSS System, Performance Heater & Final Filter | |
     | **2. CCW** | MB/PR/PH1 | Brg & FFC cooling. | 4,120 | 980 | **Mandatory** | PH#1 & FFC#1 Integrated | |
     | **3. IA** | All | Instrument air supply. | 1,150 | 290 | **Operation** | Air Compressors, IA Dryers | |
-    | **4. AS/HW** | PR#3/4/AB | Anti-Icing path. | 2,650 | 660 | **Mandatory** | Aux. Boiler, HW Pump, Heat Exchanger | |
-    | **5. N2** | GT / PR | Purging and inerting. | 320 | 90 | **Mandatory** | N2 Storage Tank, Supply System | |
+    | **4. AS/HW** | PR#3/4/AB | Anti-Icing path. | 2,650 | 660 | **Mandatory** | Aux. Boiler, Hot Water Supply Pump, Heat Exchanger | |
+    | **5. N2** | GT / PR | Purging and inerting. | 320 | 90 | **Mandatory** | N2 Storage Tank, N2 Supply System | |
     | **6. GT MISC**| MB | Gas vent & drainage. | 650 | 180 | **Mandatory** | GT Enclosure, Vent Fans | |
     | **7. Demi. Water**| WT / PR | Process water supply. | 2,000 | 480 | **Highest** | DW Tank & Pump Station | **Under review for sourcing from other power plant (by INTEGRA)** |
     | **TOTAL** | - | - | **13,370** | **3,290** | - | - | - |
