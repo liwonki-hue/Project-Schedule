@@ -54,22 +54,19 @@ st.markdown("""
         font-size: 0.95rem !important;
         vertical-align: middle !important;
     }
-    /* Index, System, Area, Criticality: Keep in one line */
+    /* Index, System, Area, Description, Criticality, Related Equipment: Keep in one line */
     [data-testid="stTable"] td:nth-child(1), 
     [data-testid="stTable"] td:nth-child(2),
     [data-testid="stTable"] td:nth-child(3),
-    [data-testid="stTable"] td:nth-child(5) {
-        white-space: nowrap !important;
-    }
-    /* Limit Related Equipment to prevent excessive wrapping if possible */
+    [data-testid="stTable"] td:nth-child(4),
+    [data-testid="stTable"] td:nth-child(5),
     [data-testid="stTable"] td:nth-child(6) {
         white-space: nowrap !important;
     }
-    /* Allow wrapping for Description(4th) and Remark(7th) */
-    [data-testid="stTable"] td:nth-child(4),
+    /* Allow wrapping only for Remark(7th) to absorb extra space */
     [data-testid="stTable"] td:nth-child(7) {
         white-space: normal !important;
-        min-width: 200px;
+        min-width: 120px;
     }
 
     [data-testid="stMetric"] { margin-bottom: -1rem !important; text-align: center; }
