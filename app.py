@@ -450,7 +450,7 @@ with tab_rep:
     ### A. Permanent Power Receiving (The Power Milestone)
     Power Receiving is a **non-negotiable milestone** that must occur before the operation of all auxiliary equipment, including CCW Pumps, Air Compressors, and HW Pumps.
     - **Pre-requisites**: Installation of AIS (Air Insulated Switchgear), Transformers, Electrical Panels, and Main Cabling must be finalized.
-    - **Safety Dependency**: Energizing cannot proceed without the completion of **Fire Fighting (FF)** and **HVAC** systems to mitigate the risk of fire and equipment overheating.
+    - **Safety Priority**: Energizing cannot proceed without the completion of **Fire Fighting (FF)** and **HVAC** systems to mitigate the risk of fire and equipment overheating.
     - **Impact**: Power Receiving must be completed *prior* to the CCW Flushing phase to ensure pump functionality.
 
     ### B. Strategic Prerequisite: Main Building Steel
