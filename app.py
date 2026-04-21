@@ -259,12 +259,12 @@ strat_bottleneck = "Main Building Structure"
 
 # --- Essential Systems Data ---
 ESSENTIAL_SYSTEMS = [
-    {"System": "Fuel Gas & FGH System", "Area": "MB / GT / FGH", "Description": "Main & Performance heater fuel.", "DI": 2480, "EA": 610, "Criticality": "Mandatory", "Equipment": "FGSS System, Performance Heater & Final Filter", "Remark": ""},
-    {"System": "Closed Cooling Water (CCW)", "Area": "MB / PR / PH#1 / FFC#1", "Description": "GT brg & FFC cooling.", "DI": 4120, "EA": 980, "Criticality": "Mandatory", "Equipment": "PH#1 & FFC#1 Integrated", "Remark": ""},
-    {"System": "Instrument Air (IA)", "Area": "All Areas", "Description": "Pneumatic control supply.", "DI": 1150, "EA": 290, "Criticality": "Operation", "Equipment": "Air Compressors, IA Dryers", "Remark": ""},
-    {"System": "Aux. Steam & Hot Water (AS/HW)", "Area": "PR#3/4 / MB", "Description": "Anti-Icing supply path.", "DI": 2650, "EA": 660, "Criticality": "Mandatory", "Equipment": "Aux. Boiler, Hot Water Supply Pump, Heat Exchanger", "Remark": ""},
+    {"System": "Fuel Gas & FGH System", "Area": "MB / GT / FGH", "Description": "Performance Heater path.", "DI": 2480, "EA": 610, "Criticality": "Mandatory", "Equipment": "FGSS System, Performance Heater & Final Filter", "Remark": ""},
+    {"System": "Closed Cooling Water (CCW)", "Area": "MB / PR / PH#1 / FFC#1", "Description": "Brg & FFC cooling.", "DI": 4120, "EA": 980, "Criticality": "Mandatory", "Equipment": "PH#1 & FFC#1 Integrated", "Remark": ""},
+    {"System": "Instrument Air (IA)", "Area": "All Areas", "Description": "Instrument air supply.", "DI": 1150, "EA": 290, "Criticality": "Operation", "Equipment": "Air Compressors, IA Dryers", "Remark": ""},
+    {"System": "Aux. Steam & Hot Water (AS/HW)", "Area": "PR#3/4 / MB", "Description": "Anti-Icing path.", "DI": 2650, "EA": 660, "Criticality": "Mandatory", "Equipment": "Aux. Boiler, Hot Water Supply Pump, Heat Exchanger", "Remark": ""},
     {"System": "Nitrogen System (N2)", "Area": "GT Area / PR", "Description": "Purging and inerting.", "DI": 320, "EA": 90, "Criticality": "Mandatory", "Equipment": "N2 Storage Tank, N2 Supply System", "Remark": ""},
-    {"System": "GT MISC (Vents)", "Area": "Main Building", "Description": "Process gas venting.", "DI": 650, "EA": 180, "Criticality": "Mandatory", "Equipment": "GT Enclosure, Vent Fans", "Remark": ""},
+    {"System": "GT MISC (Vents)", "Area": "Main Building", "Description": "Gas vent & drainage.", "DI": 650, "EA": 180, "Criticality": "Mandatory", "Equipment": "GT Enclosure, Vent Fans", "Remark": ""},
     {"System": "Demineralized Water (DW)", "Area": "Water Treatment", "Description": "Process water supply.", "DI": 2000, "EA": 480, "Criticality": "Highest", "Equipment": "DW Tank & Pump Station", "Remark": "Under review for sourcing from other power plant (by INTEGRA)"}
 ]
 
