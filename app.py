@@ -4,6 +4,7 @@ import numpy as np
 import datetime
 import plotly.express as px
 import plotly.graph_objects as go
+import streamlit.components.v1 as components
 
 # --- Global Layout Config ---
 st.set_page_config(page_title="Strategic Piping Management", layout="wide", page_icon="🏗️")
@@ -32,6 +33,13 @@ st.markdown("""
     .report-card table { width: 50% !important; border-collapse: collapse !important; margin-top: 15px !important; }
     .report-card th { background-color: #f8fafc !important; border-bottom: 2px solid #cbd5e1 !important; padding: 12px !important; }
     .report-card td { padding: 12px !important; border-bottom: 1px solid #e2e8f0 !important; }
+    
+    /* Lower Section Tables: Shrink only the Essential Systems table to 80% */
+    .compact-section table { 
+        width: 80% !important; 
+        margin-left: 0 !important; 
+        margin-right: auto !important;
+    }
     
     /* Center align table headers and cells via CSS hack */
     .stDataFrame [data-testid="stTable"] th { text-align: center !important; vertical-align: middle !important; font-size: 1.15rem !important; }
@@ -64,6 +72,13 @@ st.markdown("""
 
     [data-testid="stHeader"] { display: none; }
     .block-container { padding-top: 0.5rem !important; padding-bottom: 0.5rem !important; padding-left: 2rem !important; padding-right: 2rem !important; }
+    
+    /* Sidebar Spacing */
+    [data-testid="stSidebar"] { background-color: #f8fafc !important; }
+    [data-testid="stSidebar"] [data-testid="stVerticalBlock"] { padding-top: 25px !important; gap: 0.6rem !important; }
+    [data-testid="stSidebar"] .stMarkdown { margin-bottom: 5px !important; }
+    [data-testid="stSidebar"] .stDateInput, [data-testid="stSidebar"] .stSlider, [data-testid="stSidebar"] .stNumberInput { margin-bottom: 8px !important; }
+    [data-testid="stSidebar"] [data-testid="stWidgetLabel"] p { font-weight: 700 !important; font-size: 0.95rem !important; color: #334155 !important; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -82,12 +97,42 @@ TOTAL_DI = sum(d["DI"] for d in AREA_DATA.values())
 TOTAL_EA = sum(d["EA"] for d in AREA_DATA.values())
 MC_TARGET = datetime.date(2026, 9, 16)
 
-# --- Sidebar Controls ---
-st.sidebar.title("📌 Strategy Panel")
-view = st.sidebar.radio("View Select:", ["Dashboard", "Technical Report"])
+# --- Print Support ---
+def add_print_button():
+    components.html(
+        """
+        <script>
+            function printReport() {
+                window.parent.print();
+            }
+        </script>
+        <div style="display: flex; justify-content: flex-end; align-items: center; height: 100%;">
+            <button onclick="printReport()" style="
+                background-color: #f8fafc;
+                color: #475569;
+                padding: 6px 14px;
+                border: 1px solid #cbd5e1;
+                border-radius: 6px;
+                cursor: pointer;
+                font-weight: 600;
+                font-size: 13px;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            ">
+                <span>🖨️</span> Print
+            </button>
+        </div>
+        """,
+        height=60
+    )
 
-st.sidebar.markdown("---")
-st.sidebar.subheader("Handover Dates")
+# --- Sidebar Controls ---
+st.sidebar.markdown('<h2 style="font-size: 1.35rem; margin-top: 0; margin-bottom: 5px;">📌 Strategy Panel</h2>', unsafe_allow_html=True)
+
+st.sidebar.markdown('<hr style="margin: 10px 0;">', unsafe_allow_html=True)
+st.sidebar.markdown('<p style="font-weight: 600; font-size: 1.05rem; margin-bottom: 8px;">Handover Dates</p>', unsafe_allow_html=True)
 rel_dates = {}
 for area in AREA_DATA.keys():
     d_rel = datetime.date(2026, 6, 1)
@@ -95,12 +140,12 @@ for area in AREA_DATA.keys():
     if "GT #11" in area: d_rel = datetime.date(2026, 7, 5)
     rel_dates[area] = st.sidebar.date_input(area, d_rel)
 
-st.sidebar.markdown("---")
+st.sidebar.markdown('<hr style="margin: 5px 0;">', unsafe_allow_html=True)
 with st.sidebar.expander("Manpower Setup", expanded=True):
-    total_manpower_teams = st.sidebar.number_input("Piping Work Teams", 1, 100, 40)
-    prod_di = st.sidebar.slider("DI/Team-Day", 3.0, 30.0, 12.0)
-    prod_ea_ratio = st.sidebar.slider("EA/DI Ratio", 0.1, 1.0, 0.3)
-    priority = st.sidebar.slider("EP Priority (%)", 0, 100, 70)
+    total_manpower_teams = st.number_input("Piping Work Teams", 1, 100, 40)
+    prod_di = st.slider("DI/Team-Day", 3.0, 30.0, 12.0)
+    prod_ea_ratio = st.slider("EA/DI Ratio", 0.1, 1.0, 0.3)
+    priority = st.slider("EP Priority (%)", 0, 100, 70)
 
 # --- Simulation Logic ---
 AREA_CAPS = {
@@ -190,17 +235,40 @@ math_bottleneck = df.loc[df['Pressure Test Finish'].idxmax(), 'Area']
 # User defined strategic bottleneck: Main Building Structure
 strat_bottleneck = "Main Building Structure"
 
+# --- Essential Systems Data ---
+ESSENTIAL_SYSTEMS = [
+    {"System": "Closed Cooling Water (CCW)", "Area": "Main Building / PR", "Description": "Provides cooling water to GT/ST bearings and accessory equipment.", "Criticality": "Highest", "Remark": "CCW Heat Exchangers, CCW Pumps"},
+    {"System": "Fuel Gas System (FG)", "Area": "Main Building / GT Area", "Description": "Distributes filtered and regulated fuel gas to GT combustion system.", "Criticality": "Mandatory", "Remark": "FG Filter Separator, FG Heater, Gas Turbines"},
+    {"System": "Demineralized Water (DW)", "Area": "Water Treatment / PR", "Description": "Supply of high-purity water for process requirements and cleaning.", "Criticality": "Mandatory", "Remark": "DW Tank, DW Supply Pumps"},
+    {"System": "Nitrogen System (N2)", "Area": "GT Area / PR", "Description": "Used for purging fuel gas lines and inerting systems before maintenance.", "Criticality": "Mandatory", "Remark": "N2 Bottle Rack, Purge Panels"},
+    {"System": "GT MISC (Vents)", "Area": "Main Building", "Description": "Safe venting of process gases and drainage of lube oil leakages.", "Criticality": "Mandatory", "Remark": "GT Enclosure, Vent Fans, Lube Oil Mist Eliminator"},
+    {"System": "Instrument Air (IA)", "Area": "All Areas", "Description": "Provides compressed air for pneumatic control valves and instruments.", "Criticality": "Operation", "Remark": "Air Compressors, IA Dryers"},
+]
+
 # --- Presentation Layer ---
-if view == "Dashboard":
-    st.title("🏗️ Project Acceleration Dashboard: GT #11 Early Power (Strategic Path)")
-    st.info(f"Strategic Bottleneck: **{strat_bottleneck}** (Header Access Constraint) | Target Float: {net_float} Days")
+tab_dash, tab_rep = st.tabs(["📊 Dashboard View", "📋 Technical Report"])
+
+with tab_dash:
+    t_col, p_col = st.columns([8.2, 1.8])
+    with t_col:
+        st.markdown('<h1 style="font-size: 1.8rem; margin: 0; padding: 0;">🏗️ Project Acceleration Dashboard: GT #11 Early Power</h1>', unsafe_allow_html=True)
+    with p_col:
+        add_print_button()
+    
+    st.markdown(f"""
+        <div style="background-color:#e0f2f1; padding:18px; border-radius:10px; border-left:8px solid #00897b; margin-bottom:20px;">
+            <span style="font-size:1.35rem; font-weight:bold; color:#004d40;">
+                🚨 Ultimate Bottleneck in timeline : {strat_bottleneck} (Structure Access for header piping installation Constraint) | Target Float: {net_float} Days
+            </span>
+        </div>
+    """, unsafe_allow_html=True)
     
     # KPI Grid
     m1, m2, m3, m4, m5, m6 = st.columns(6)
-    m1.metric("Piping Vol.", f"{TOTAL_DI:,} DI")
+    m1.metric("Piping Vol. (Field)", f"{TOTAL_DI:,} DI")
     m2.metric("Support Vol.", f"{TOTAL_EA:,} EA")
-    m3.metric("PIPING(DI) Avg", f"{prod_di} DI/DAY")
-    m4.metric("SUPPORT(EA) Avg", f"{prod_ea:.1f} EA/DAY")
+    m3.metric("Avg Field DI/DAY", f"{prod_di} DI")
+    m4.metric("Avg Support EA/DAY", f"{prod_ea:.1f} EA")
     m5.metric("Target Float", f"{net_float} D", delta_color="normal" if net_float >= 0 else "inverse")
     m6.metric("Total Teams", f"{ep_work_teams:.1f}")
     
@@ -208,7 +276,7 @@ if view == "Dashboard":
     
     left, right = st.columns([6.8, 3.2])
     with left:
-        st.subheader("📍 Detailed Milestone Forecast with Site Status")
+        st.subheader("📊 Detailed Milestone Forecast")
         df_view = df.copy()
         # Format for display
         df_view["Work Teams Temp"] = df_view["Work Teams"].map(lambda x: f"{x:.1f}")
@@ -233,29 +301,48 @@ if view == "Dashboard":
         }])
         df_display = pd.concat([df_display, total_row], ignore_index=True)
 
-        st.dataframe(
-            df_display.style.set_properties(**{'text-align': 'center'})
-            .apply(lambda x: ['font-weight: bold; background-color: #f8fafc' if x.name == len(df_display)-1 else '' for _ in x], axis=1)
-            .map(lambda x: 'color: red; font-weight: bold;' if isinstance(x, (int, float)) and x < 0 else '', subset=['Float']),
-            use_container_width=True, height=345, hide_index=True
-        )
+        st.table(df_display)
     
     with right:
-        st.subheader("📅 Construction Path (Strategic Window)")
+        st.subheader("📅 Construction Path")
         # Align chart bars with table rows (offset for table header height)
         st.markdown("<div style='height: 40px;'></div>", unsafe_allow_html=True)
-        # Chart: Reverse y-axis to match Top-to-Bottom table order
-        fig = px.timeline(df, x_start="Handover", x_end="Pressure Test Finish", y="Area", color="Float", color_continuous_scale=["#ef4444", "#22c55e"], height=270)
+        # --- Enhanced Chart: Add Start/Finish Labels ---
+        fig = px.timeline(df, x_start="Handover", x_end="Pressure Test Finish", y="Area", 
+                          color="Float", color_continuous_scale=["#ef4444", "#22c55e"], height=250)
         fig.update_yaxes(autorange="reversed") 
         fig.add_vline(x=pd.to_datetime(MC_TARGET).timestamp() * 1000, line_dash="dash", line_color="red")
-        fig.update_layout(margin=dict(l=0, r=0, t=0, b=0), xaxis_title=None, yaxis_title=None, showlegend=False)
+        
+        # Add text labels for Start and Finish next to the bars
+        for idx, row in df.iterrows():
+            # Start Date (Left)
+            fig.add_annotation(
+                x=row["Handover"], y=row["Area"],
+                text=f"<b>{row['Handover'].strftime('%m/%d')}</b>",
+                showarrow=False, xanchor='right', xshift=-10,
+                font=dict(size=11, color="#334155")
+            )
+            # Finish Date (Right)
+            fig.add_annotation(
+                x=row["Pressure Test Finish"], y=row["Area"],
+                text=f"<b>{row['Pressure Test Finish'].strftime('%m/%d')}</b>",
+                showarrow=False, xanchor='left', xshift=10,
+                font=dict(size=11, color="#334155")
+            )
+
+        fig.update_layout(
+            margin=dict(l=0, r=40, t=0, b=0), # Revert to compact margins
+            xaxis_title=None, yaxis_title=None, 
+            showlegend=False,
+            coloraxis_showscale=False # Remove color bar legend
+        )
         st.plotly_chart(fig, use_container_width=True)
 
     # --- Compact Lower Section ---
     st.markdown("""
         <style>
-        .compact-section { margin-top: -80px; }
-        .stDivider { margin-top: -25px; margin-bottom: -20px; }
+        .compact-section { margin-top: -70px; }
+        .stDivider { margin-top: 0px; margin-bottom: 0px; }
         .flow-box { 
             background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; 
             padding: 10px; font-size: 1.05rem; text-align: center; height: 100%;
@@ -264,36 +351,38 @@ if view == "Dashboard":
     """, unsafe_allow_html=True)
 
     st.markdown('<div class="compact-section">', unsafe_allow_html=True)
-    st.divider()
-    st.markdown('<h3 style="margin-top: -10px; font-size: 1.4rem;">⚡ Strategic Action Plan & Constraints</h3>', unsafe_allow_html=True)
+    # Divider removed to save space
     
-    col_a, col_b = st.columns(2)
-    with col_a:
-        st.warning(f"**Constraint**: {strat_bottleneck}. MB Steel is the critical path gate.")
-    with col_b:
-        st.success(f"**Site Status**: GT#11 50% (Alignment & Accessories). Ready for Equipment Piping.")
-
-    st.subheader("🏁 Construction Work Flow (Strategic Sequence)")
+    st.subheader("🔄 Construction Work Flow")
     f1, f2, f3, f4, f5 = st.columns(5)
     f1.markdown('<div class="flow-box"><b>1. Structure</b><br>Handover</div>', unsafe_allow_html=True)
     f2.markdown('<div class="flow-box"><b>2. Access</b><br>Scaffolding (2 Weeks)</div>', unsafe_allow_html=True)
     f3.markdown('<div class="flow-box"><b>3. Erection</b><br>Header & Branches Piping</div>', unsafe_allow_html=True)
     f4.markdown('<div class="flow-box"><b>4. Punch & Test</b><br>Pressure Test & Punch (2 Weeks)</div>', unsafe_allow_html=True)
-    f5.markdown('<div class="flow-box"><b>5. Pre-Commissioning</b><br>CCW Flushing & FG Pig Cleaning (2 Months)</div>', unsafe_allow_html=True)
+    f5.markdown('<div class="flow-box"><b>5. Pre-Commissioning</b><br>CCW Flushing & FG Pig Cleaning<br>(2 Months)</div>', unsafe_allow_html=True)
 
+    st.subheader("✅ Essential Systems for GT #11 Start-up")
+    st.table(pd.DataFrame(ESSENTIAL_SYSTEMS))
+
+    st.subheader("💡 Solution to Meet Target MC (Sep 16, 2026)")
     st.markdown(f"""
         <div class="solution-card">
-            <span class="solution-title">💡 Strategic Solution to Meet Target MC (Sep 16, 2026)</span>
             <div class="solution-content">
-                1. <b>Parallel Resource Injection</b>: Increase total teams to 40+ upon MB Steel release to compress branch erection. <br>
-                2. <b>Double Shift (Night Work)</b>: Implement 24/7 welding for Header-to-Branch transitions in Main Building Structural area.<br>
-                3. <b>Pre-spool Staging</b>: Complete all item-punching at ground level *before* crane lifting to minimize high-elevation work time.
+                <div style="margin-bottom: 5pt;">1. <b>Parallel Resource Injection</b>: Increase total teams to 40+ upon MB Steel release to compress branch erection.</div>
+                <div style="margin-bottom: 5pt;">2. <b>Double Shift (Night Work)</b>: Implement 24/7 welding for Header-to-Branch transitions in Main Building Structural area.</div>
+                <div>3. <b>Pre-spool Staging</b>: Complete all item-punching at ground level *before* crane lifting to minimize high-elevation work time.</div>
             </div>
         </div>
     """, unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
-
-else:
+# --- Technical Report Tab ---
+with tab_rep:
+    rt_col, rp_col = st.columns([8.5, 1.5])
+    with rt_col:
+        st.title("📋 Technical Report: GT #11 Early Power")
+    with rp_col:
+        add_print_button()
+        
     st.markdown(f"""
     <div class="report-card">
     
@@ -337,21 +426,19 @@ else:
     ## 5. Essential Systems for GT #11 Start-up
     To achieve Early Power, the following core systems must reach Mechanical Completion (MC) and undergo pre-commissioning.
     
-    | Essential System | Volume (DI) | Support (EA) | Criticality | Remark |
-    | :--- | :---: | :---: | :--- | :--- |
-    | **Closed Cooling Water (CCW)** | 4,500 | 680 | **Highest** | Essential for Equipment Cooling |
-    | **Fuel Gas System (FG)** | 3,200 | 450 | **Mandatory** | High-pressure welding / NDT |
-    | **Demineralized Water (DW)** | 2,200 | 320 | **Mandatory** | Process requirement |
-    | **Nitrogen System (N2)** | 1,100 | 150 | **Mandatory** | FG Purging & Inertia |
-    | **GT MISC (Vents)** | 1,800 | 250 | **Mandatory** | Lube Oil & Fuel Gas Vents |
-    | **Instrument Air (IA)** | 1,500 | 220 | **Operation** | Control Valve Logic |
-    | **TOTAL** | **14,300** | **2,070** | **Critical Paths**| **Early Power Essential Scope** |
+    | Essential System | Area | Description | Criticality | Remark (Equipment) |
+    | :--- | :--- | :--- | :--- | :--- |
+    | **CCW** | Main Building / PR | Cooling for GT/ST bearings/accessory equipment. | **Highest** | CCW Heat Exchangers, Pumps |
+    | **Fuel Gas (FG)** | MB / GT Area | Regulated fuel gas supply to GT combustion. | **Mandatory** | FG Filter Separators, Heaters |
+    | **Demineralized Water** | WT / PR | High-purity water for cleaning/process. | **Mandatory** | DW Tanks, Supply Pumps |
+    | **Nitrogen (N2)** | GT Area / PR | Purging/inerting systems before maintenance. | **Mandatory** | N2 Bottle Racks, Purge Panels |
+    | **GT MISC (Vents)** | Main Building | Safe venting of gases / Oil drainage. | **Mandatory** | GT Enclosure, Vent Fans |
+    | **Instrument Air** | All Areas | Compressed air for pneumatic control logic. | **Operation** | Air Compressors, Dryers |
     
     > **⚠️ Note on Volumetric Reconciliation**:
-    > There is a distinction between the **Total Area Construction Volume (22,938 DI)** on the dashboard and the **Start-up Essential Scope (14,300 DI)** above. 
-    > 1. **Total Dashboard Vol.**: Represents every physical ISO within the assigned areas (including all non-essential and utility drains).
-    > 2. **Strategic Report Vol.**: Isolates only the **Critical Path Systems** (CCW, FG, DW, etc.) mandatory for GT #11 First Firing. 
-    > 3. **Rationale**: Resource allocation is prioritized for these 14,300 DI to compress the schedule, while the remaining ~8,600 DI (Non-critical scope) are managed as a secondary parallel track.
+    > There is a distinction between the **Total Area Construction Volume (22,938 DI)** on the dashboard and the **Start-up Essential Scope** above. 
+    > 1. **Field Erection Basis**: All DI values represent **Site Field Erection (Final Jointing)** only. Shop Fabrication is excluded.
+    > 2. **Priority**: Resource allocation is prioritized for these systems to compress the schedule.
     
     - **Integrated Approach**: Welding and NDT for these systems are prioritized for the Main Building and Pipe Rack #3/#4 paths.
     

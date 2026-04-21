@@ -13,31 +13,202 @@
       "norm_label": "app.py"
     },
     {
-      "label": "load_synth_data()",
+      "label": "add_print_button()",
       "file_type": "code",
       "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\app.py",
-      "source_location": "L101",
-      "id": "app_load_synth_data",
+      "source_location": "L87",
+      "id": "app_add_print_button",
       "community": 0,
-      "norm_label": "load_synth_data()"
+      "norm_label": "add_print_button()"
     },
     {
-      "label": "forecast_model()",
+      "label": "allocate_teams()",
       "file_type": "code",
       "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\app.py",
-      "source_location": "L226",
-      "id": "app_forecast_model",
+      "source_location": "L155",
+      "id": "app_allocate_teams",
       "community": 0,
-      "norm_label": "forecast_model()"
+      "norm_label": "allocate_teams()"
     },
     {
-      "label": "color_float()",
+      "label": "area_breakdown.py",
       "file_type": "code",
-      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\app.py",
-      "source_location": "L352",
-      "id": "app_color_float",
-      "community": 0,
-      "norm_label": "color_float()"
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\area_breakdown.py",
+      "source_location": "L1",
+      "id": "c_users_pclove_downloads_project_schedule_scratch_area_breakdown_py",
+      "community": 4,
+      "norm_label": "area_breakdown.py"
+    },
+    {
+      "label": "get_area_breakdown()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\area_breakdown.py",
+      "source_location": "L6",
+      "id": "area_breakdown_get_area_breakdown",
+      "community": 4,
+      "norm_label": "get_area_breakdown()"
+    },
+    {
+      "label": "check_system.py",
+      "file_type": "code",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\check_system.py",
+      "source_location": "L1",
+      "id": "c_users_pclove_downloads_project_schedule_scratch_check_system_py",
+      "community": 9,
+      "norm_label": "check_system.py"
+    },
+    {
+      "label": "data_analysis.py",
+      "file_type": "code",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\data_analysis.py",
+      "source_location": "L1",
+      "id": "c_users_pclove_downloads_project_schedule_scratch_data_analysis_py",
+      "community": 1,
+      "norm_label": "data_analysis.py"
+    },
+    {
+      "label": "get_piping_data()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\data_analysis.py",
+      "source_location": "L6",
+      "id": "data_analysis_get_piping_data",
+      "community": 1,
+      "norm_label": "get_piping_data()"
+    },
+    {
+      "label": "get_support_data()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\data_analysis.py",
+      "source_location": "L18",
+      "id": "data_analysis_get_support_data",
+      "community": 1,
+      "norm_label": "get_support_data()"
+    },
+    {
+      "label": "early_power_analysis.py",
+      "file_type": "code",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\early_power_analysis.py",
+      "source_location": "L1",
+      "id": "c_users_pclove_downloads_project_schedule_scratch_early_power_analysis_py",
+      "community": 5,
+      "norm_label": "early_power_analysis.py"
+    },
+    {
+      "label": "analyze_early_power()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\early_power_analysis.py",
+      "source_location": "L6",
+      "id": "early_power_analysis_analyze_early_power",
+      "community": 5,
+      "norm_label": "analyze_early_power()"
+    },
+    {
+      "label": "final_analysis.py",
+      "file_type": "code",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\final_analysis.py",
+      "source_location": "L1",
+      "id": "c_users_pclove_downloads_project_schedule_scratch_final_analysis_py",
+      "community": 2,
+      "norm_label": "final_analysis.py"
+    },
+    {
+      "label": "analyze_piping()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\final_analysis.py",
+      "source_location": "L6",
+      "id": "final_analysis_analyze_piping",
+      "community": 2,
+      "norm_label": "analyze_piping()"
+    },
+    {
+      "label": "analyze_support()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\final_analysis.py",
+      "source_location": "L23",
+      "id": "final_analysis_analyze_support",
+      "community": 2,
+      "norm_label": "analyze_support()"
+    },
+    {
+      "label": "inspect_excel.py",
+      "file_type": "code",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\inspect_excel.py",
+      "source_location": "L1",
+      "id": "c_users_pclove_downloads_project_schedule_scratch_inspect_excel_py",
+      "community": 6,
+      "norm_label": "inspect_excel.py"
+    },
+    {
+      "label": "inspect_excel()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\inspect_excel.py",
+      "source_location": "L4",
+      "id": "inspect_excel_inspect_excel",
+      "community": 6,
+      "norm_label": "inspect_excel()"
+    },
+    {
+      "label": "inspect_supabase.py",
+      "file_type": "code",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\inspect_supabase.py",
+      "source_location": "L1",
+      "id": "c_users_pclove_downloads_project_schedule_scratch_inspect_supabase_py",
+      "community": 7,
+      "norm_label": "inspect_supabase.py"
+    },
+    {
+      "label": "inspect_table()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\inspect_supabase.py",
+      "source_location": "L12",
+      "id": "inspect_supabase_inspect_table",
+      "community": 7,
+      "norm_label": "inspect_table()"
+    },
+    {
+      "label": "list_tables.py",
+      "file_type": "code",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\list_tables.py",
+      "source_location": "L1",
+      "id": "c_users_pclove_downloads_project_schedule_scratch_list_tables_py",
+      "community": 8,
+      "norm_label": "list_tables.py"
+    },
+    {
+      "label": "list_tables()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\list_tables.py",
+      "source_location": "L12",
+      "id": "list_tables_list_tables",
+      "community": 8,
+      "norm_label": "list_tables()"
+    },
+    {
+      "label": "sim_summary.py",
+      "file_type": "code",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\sim_summary.py",
+      "source_location": "L1",
+      "id": "c_users_pclove_downloads_project_schedule_scratch_sim_summary_py",
+      "community": 3,
+      "norm_label": "sim_summary.py"
+    },
+    {
+      "label": "categorize_area()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\sim_summary.py",
+      "source_location": "L6",
+      "id": "sim_summary_categorize_area",
+      "community": 3,
+      "norm_label": "categorize_area()"
+    },
+    {
+      "label": "run_simulation()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\sim_summary.py",
+      "source_location": "L15",
+      "id": "sim_summary_run_simulation",
+      "community": 3,
+      "norm_label": "run_simulation()"
     }
   ],
   "links": [
@@ -45,36 +216,156 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\app.py",
-      "source_location": "L101",
+      "source_location": "L87",
       "weight": 1.0,
       "_src": "c_users_pclove_downloads_project_schedule_app_py",
-      "_tgt": "app_load_synth_data",
+      "_tgt": "app_add_print_button",
       "source": "c_users_pclove_downloads_project_schedule_app_py",
-      "target": "app_load_synth_data",
+      "target": "app_add_print_button",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\app.py",
-      "source_location": "L226",
+      "source_location": "L155",
       "weight": 1.0,
       "_src": "c_users_pclove_downloads_project_schedule_app_py",
-      "_tgt": "app_forecast_model",
+      "_tgt": "app_allocate_teams",
       "source": "c_users_pclove_downloads_project_schedule_app_py",
-      "target": "app_forecast_model",
+      "target": "app_allocate_teams",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\app.py",
-      "source_location": "L352",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\area_breakdown.py",
+      "source_location": "L6",
       "weight": 1.0,
-      "_src": "c_users_pclove_downloads_project_schedule_app_py",
-      "_tgt": "app_color_float",
-      "source": "c_users_pclove_downloads_project_schedule_app_py",
-      "target": "app_color_float",
+      "_src": "c_users_pclove_downloads_project_schedule_scratch_area_breakdown_py",
+      "_tgt": "area_breakdown_get_area_breakdown",
+      "source": "c_users_pclove_downloads_project_schedule_scratch_area_breakdown_py",
+      "target": "area_breakdown_get_area_breakdown",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\data_analysis.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "c_users_pclove_downloads_project_schedule_scratch_data_analysis_py",
+      "_tgt": "data_analysis_get_piping_data",
+      "source": "c_users_pclove_downloads_project_schedule_scratch_data_analysis_py",
+      "target": "data_analysis_get_piping_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\data_analysis.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "c_users_pclove_downloads_project_schedule_scratch_data_analysis_py",
+      "_tgt": "data_analysis_get_support_data",
+      "source": "c_users_pclove_downloads_project_schedule_scratch_data_analysis_py",
+      "target": "data_analysis_get_support_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\early_power_analysis.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "c_users_pclove_downloads_project_schedule_scratch_early_power_analysis_py",
+      "_tgt": "early_power_analysis_analyze_early_power",
+      "source": "c_users_pclove_downloads_project_schedule_scratch_early_power_analysis_py",
+      "target": "early_power_analysis_analyze_early_power",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\final_analysis.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "c_users_pclove_downloads_project_schedule_scratch_final_analysis_py",
+      "_tgt": "final_analysis_analyze_piping",
+      "source": "c_users_pclove_downloads_project_schedule_scratch_final_analysis_py",
+      "target": "final_analysis_analyze_piping",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\final_analysis.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_src": "c_users_pclove_downloads_project_schedule_scratch_final_analysis_py",
+      "_tgt": "final_analysis_analyze_support",
+      "source": "c_users_pclove_downloads_project_schedule_scratch_final_analysis_py",
+      "target": "final_analysis_analyze_support",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\inspect_excel.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "c_users_pclove_downloads_project_schedule_scratch_inspect_excel_py",
+      "_tgt": "inspect_excel_inspect_excel",
+      "source": "c_users_pclove_downloads_project_schedule_scratch_inspect_excel_py",
+      "target": "inspect_excel_inspect_excel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\inspect_supabase.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "c_users_pclove_downloads_project_schedule_scratch_inspect_supabase_py",
+      "_tgt": "inspect_supabase_inspect_table",
+      "source": "c_users_pclove_downloads_project_schedule_scratch_inspect_supabase_py",
+      "target": "inspect_supabase_inspect_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\list_tables.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "c_users_pclove_downloads_project_schedule_scratch_list_tables_py",
+      "_tgt": "list_tables_list_tables",
+      "source": "c_users_pclove_downloads_project_schedule_scratch_list_tables_py",
+      "target": "list_tables_list_tables",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\sim_summary.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "c_users_pclove_downloads_project_schedule_scratch_sim_summary_py",
+      "_tgt": "sim_summary_categorize_area",
+      "source": "c_users_pclove_downloads_project_schedule_scratch_sim_summary_py",
+      "target": "sim_summary_categorize_area",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\PCLOVE\\Downloads\\Project Schedule\\scratch\\sim_summary.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "c_users_pclove_downloads_project_schedule_scratch_sim_summary_py",
+      "_tgt": "sim_summary_run_simulation",
+      "source": "c_users_pclove_downloads_project_schedule_scratch_sim_summary_py",
+      "target": "sim_summary_run_simulation",
       "confidence_score": 1.0
     }
   ],
