@@ -488,7 +488,7 @@ with tab_rep:
     
     - **Integrated Approach**: Welding and NDT for these systems are prioritized for the Main Building and Pipe Rack #3/#4 paths.
     
-    ## 6. Strategic Action Items for On-time Completion
+    ## 6. Action Items for On-time Completion
     
     1. **Safety Priority**: Prioritize Fire Fighting & HVAC in electrical rooms to allow Energizing without fire/overheating risk.
     2. **Power Receiving**: Complete AIS/Transformer & Cable installation to enable Power Receiving before CCW Flushing.
