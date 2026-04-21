@@ -509,7 +509,7 @@ with tab_rep:
     For the target operation date of **Dec 31, 2026**, the Anti-Icing system is mandatory to prevent GT Air Intake freezing.
     - **System Logic**: Utilizes Steam from the Aux. Boiler to heat water, which is then circulated via Hot Water (HW) Supply Pumps and Heat Exchangers.
     - **Piping Routing**: The AS/HW piping path encompasses: Aux. Boiler Building & HW Pump House → PR #4 → PR #3 → MB Structure → GT #11.
-    - **Priority Scope**: Installation of Unit B0 and B1 piping volumes is mandatory for this system to be functional for the winter startup.
+    - **Work Scope**: Installation of Unit B0 and B1 piping volumes is mandatory for this system to be functional for the winter startup.
     
     ## 4. Resource Allocation Logic (Deep Dive)
     - **Workspace Constraint**: Manpower in Main Building Structure remains capped at **6 teams** due to elevation and space safety constraints.
