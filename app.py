@@ -454,7 +454,7 @@ with tab_rep:
     ### B. Strategic Prerequisite: Main Building Steel Structure
     The Main Building Steel Structure remains the definitive piping bottleneck, as branch piping distributions depend on MB Structure certification.
     
-    ## 2. Commissioning Strategy: CCW & Fuel Gas
+    ## 2. Commissioning Strategy: CCW & Fuel Gas System
     The 2-month window post-MC is driven by high-velocity flushing of the CCW and clean-pigging of the FG lines.
     
     ## 3. GT Anti-Icing System (Winter Operation)
