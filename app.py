@@ -332,7 +332,11 @@ with tab_dash:
             "Float": int(df["Float"].min())
         }])
         df_display = pd.concat([df_display, total_row], ignore_index=True)
-
+        
+        # Set index to 1, 2, 3... and empty string for TOTAL
+        new_index = [str(i+1) for i in range(len(df_display)-1)] + [""]
+        df_display.index = new_index
+        
         st.table(df_display)
     
     with right:
