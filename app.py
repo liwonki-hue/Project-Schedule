@@ -54,21 +54,19 @@ st.markdown("""
         font-size: 0.95rem !important;
         vertical-align: middle !important;
     }
-    /* Index, System, Area: Keep narrow and no-wrap */
-    [data-testid="stTable"] td:nth-child(1),
+    /* Index, System, Area, Description, Criticality, Related Equipment: Keep in one line */
+    [data-testid="stTable"] td:nth-child(1), 
     [data-testid="stTable"] td:nth-child(2),
-    [data-testid="stTable"] td:nth-child(3) {
+    [data-testid="stTable"] td:nth-child(3),
+    [data-testid="stTable"] td:nth-child(4),
+    [data-testid="stTable"] td:nth-child(5),
+    [data-testid="stTable"] td:nth-child(6) {
         white-space: nowrap !important;
     }
-    /* Description(4), Criticality(5), Related Equipment(6): Increase width */
-    [data-testid="stTable"] td:nth-child(4) { min-width: 300px !important; white-space: nowrap !important; }
-    [data-testid="stTable"] td:nth-child(5) { min-width: 100px !important; white-space: nowrap !important; }
-    [data-testid="stTable"] td:nth-child(6) { min-width: 250px !important; white-space: nowrap !important; }
-    
-    /* Remark(7th): Reduce width and allow wrap */
+    /* Allow wrapping only for Remark(7th) to absorb extra space */
     [data-testid="stTable"] td:nth-child(7) {
         white-space: normal !important;
-        width: 200px !important;
+        min-width: 120px;
     }
 
     [data-testid="stMetric"] { margin-bottom: -1rem !important; text-align: center; }
