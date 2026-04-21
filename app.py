@@ -84,11 +84,11 @@ st.markdown("""
 
 # --- Master Data ---
 AREA_DATA = {
-    "GT #11 Installation": {"EA": 377, "DI": 2466, "Lag": 0, "Status": "Alignment (50%)"},
+    "GT #11 Installation": {"EA": 895, "DI": 4115, "Lag": 0, "Status": "Alignment (50%)"}, # Added AS/HW (+1649 DI, +518 EA)
     "HRSG #11 PR": {"EA": 173, "DI": 1131, "Lag": 2, "Status": "In Progress"},
-    "Main Building Structure": {"EA": 1290, "DI": 8438, "Lag": 2, "Status": "Wait for MB Steel"},
-    "Pipe Rack #3": {"EA": 407, "DI": 2662, "Lag": 2, "Status": "Wait for Civil"},
-    "Pipe Rack #4": {"EA": 600, "DI": 3925, "Lag": 2, "Status": "Wait for Civil"},
+    "Main Building Structure": {"EA": 1808, "DI": 10087, "Lag": 2, "Status": "Wait for MB Steel"}, # Added AS/HW (+1649 DI, +518 EA)
+    "Pipe Rack #3": {"EA": 925, "DI": 4311, "Lag": 2, "Status": "Wait for Civil"}, # Added AS/HW (+1649 DI, +518 EA)
+    "Pipe Rack #4": {"EA": 1118, "DI": 5574, "Lag": 2, "Status": "Wait for Civil"}, # Added AS/HW (+1649 DI, +518 EA)
     "Pipe Rack #5": {"EA": 266, "DI": 1740, "Lag": 2, "Status": "Wait for Civil"},
     "Pipe Rack #6": {"EA": 173, "DI": 1131, "Lag": 2, "Status": "Wait for Civil"},
     "Pipe Rack #7": {"EA": 221, "DI": 1445, "Lag": 2, "Status": "Wait for Civil"}
