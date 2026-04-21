@@ -391,14 +391,14 @@ with tab_dash:
     df_e.index = np.arange(1, len(df_e) + 1)
     st.table(df_e)
 
-    st.subheader("💡 Solution & Infrastructure Dependency")
+    st.subheader("💡 Infrastructure Dependency & Solution")
     st.markdown(f"""
         <div class="solution-card">
             <div class="solution-content">
-                <div style="margin-bottom: 5pt;">1. <b>Permanent Power First</b>: Complete AIS/Transformer & Cable installation to enable Power Receiving before CCW Flushing.</div>
-                <div style="margin-bottom: 5pt;">2. <b>Anti-Icing Readiness</b>: Accelerate AS/HW piping path (Aux. Boiler -> PR#4 -> PR#3 -> GT#11) for Dec 31 Startup.</div>
-                <div style="margin-bottom: 5pt;">3. <b>Safety Interlock</b>: Prioritize Fire Fighting & HVAC in electrical rooms to allow Energizing without fire/overheating risk.</div>
-                <div>4. <b>Double Shift</b>: Implement 24/7 welding for Main Building Structural Header-to-Branch transitions.</div>
+                <div style="margin-bottom: 5pt;">1. <b>Safety Priority</b>: Prioritize Fire Fighting & HVAC in electrical rooms to allow Energizing without fire/overheating risk.</div>
+                <div style="margin-bottom: 5pt;">2. <b>Power Receiving</b>: Complete AIS/Transformer & Cable installation to enable Power Receiving before CCW Flushing.</div>
+                <div style="margin-bottom: 5pt;">3. <b>Structural Handover</b>: 선행 공정인 Mech. / Arch. Team 추가 자원 투입 및 돌관 작업을 통한 Pipe Rack & MB Structure 조기 인도</div>
+                <div>4. <b>Double Shift</b>: <b>Implement 24/7 welding for Main Building Structural Header-to-Branch transitions.</b></div>
             </div>
         </div>
     """, unsafe_allow_html=True)
