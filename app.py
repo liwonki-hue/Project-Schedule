@@ -434,8 +434,11 @@ with tab_rep:
     | **CCW** | MB / PR | Cooling for bearings/accessory equipment. | **Mandatory** | **Permanent Power** |
     | **AS & HW** | AB / PR3,4 / GT | **Anti-Icing** for winter intake safety. | **Mandatory** | Aux. Boiler & HW Pumps |
     | **Fuel Gas (FG)** | MB / GT Area | Regulated fuel gas supply to GT. | **Mandatory** | Path integrity |
+    | **Nitrogen (N2)** | GT Area / PR | Purging/inerting systems before maintenance. | **Mandatory** | N2 Bottle Rack |
+    | **GT MISC (Vents)** | Main Building | Safe venting of process gases/leakage. | **Mandatory** | GT Enclosure Fans |
     | **Fire Fighting** | Electrical Area | Fire protection during Energizing. | **Safety** | Fire Pump & piping |
     | **HVAC** | Electrical Area | Overheating prevention for Panels. | **Safety** | Duct & Unit Installation |
+    | **Instrument Air** | All Areas | Compressed air for pneumatic control logic. | **Operation** | Air Compressor & Dryers |
     
     > **⚠️ Note on Volumetric Reconciliation**:
     > There is a distinction between the **Total Area Construction Volume (22,938 DI)** on the dashboard and the **Start-up Essential Scope** above. 
