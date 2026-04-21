@@ -560,8 +560,7 @@ with tab_rep:
     - Severe resource inefficiencies and spatial conflicts will cause a **minimum 3-month delay** in total project completion.
     - Coordination with the client regarding potential schedule extensions and technical requirements for final unit integration.
     
-    ---
-    *Disclaimer: Report updated to reflect Dec 31 Operation basis, Anti-Icing Mandatory requirement, and Strategic Risks associated with early Unit #1 power generation.*
+
     
     </div>
     """, unsafe_allow_html=True)
