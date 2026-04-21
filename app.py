@@ -456,9 +456,8 @@ with tab_rep:
     
     ## 2. Commissioning Strategy: CCW & Fuel Gas System
     - **Technical Pre-requisites**: Formal completion of piping, supports, punch clearance, and pressure tests.
-    - **Operational Readiness**: Pre-fabricate temporary items (Launchers, Receivers) for immediate post-test installation.  
-    
-    *The 2-month window post-MC is driven by high-velocity flushing of the CCW and clean-pigging of the FG lines.*
+    - **Operational Readiness**: Pre-fabricate temporary items (Launchers, Receivers) for immediate post-test installation.
+    - **Pre-Commissioning**: The 2-month window post-MC is driven by high-velocity flushing of the CCW and clean-pigging of the FG lines.
     
     ## 3. GT Anti-Icing System (Winter Operation)
     For the target operation date of **Dec 31, 2026**, the Anti-Icing system is mandatory to prevent GT Air Intake freezing.
