@@ -444,7 +444,7 @@ with tab_rep:
     
     ---
     
-    ## 1. Project Sequence & Major Infrastructure Constraints
+    ## 1. Project Sequence & Major Constraints
     The GT #11 startup is governed not only by piping progress but also by critical infrastructure and safety prerequisites.
     
     ### A. Permanent Power Receiving (The Power Milestone)
