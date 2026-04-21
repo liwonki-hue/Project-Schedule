@@ -488,11 +488,12 @@ with tab_rep:
     
     - **Integrated Approach**: Welding and NDT for these systems are prioritized for the Main Building and Pipe Rack #3/#4 paths.
     
-    ## 6. Summary of Strategic Actions
-    1. **Power Receiving Interlock**: Synchronize Electrical (AIS/Cable) and Piping (CCW) schedules.
-    2. **Safety Systems Concurrent Work**: Ensure FF and HVAC installation in electrical rooms overlaps with cabling to avoid energizing delays.
-    3. **AS/HW Path Acceleration**: Prioritize PR#4 and PR#3 paths to secure Anti-Icing before the onset of winter freezing.
-    4. **Winterization Readiness**: Complete all B0/B1 scope spools at shop to minimize field welding during cold conditions.
+    ## 6. Strategic Action Items for On-time Completion
+    
+    1. **Safety Priority**: Prioritize Fire Fighting & HVAC in electrical rooms to allow Energizing without fire/overheating risk.
+    2. **Power Receiving**: Complete AIS/Transformer & Cable installation to enable Power Receiving before CCW Flushing.
+    3. **Structural Early Handover**: Accelerate Pipe Rack & MB Structure delivery through additional manpower and crash work by preceding Mechanical/Architectural teams.
+    4. **Double Shift**: Implement 24/7 welding for Main Building Structural Header-to-Branch transitions to maximize daily output.
     
     ---
     *Disclaimer: Report updated to reflect Dec 31 Operation basis, Anti-Icing Mandatory requirement, and Power Receiving/FF/HVAC Interlock constraints.*
