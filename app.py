@@ -480,7 +480,7 @@ with tab_rep:
     | **5. N2** | GT / PR | Purging and inerting. | 210 | 65 | **Mandatory** | N2 Rack / Purge Panels |
     | **6. GT MISC**| MB | Gas vent & drainage. | 450 | 130 | **Mandatory** | GT Encl / Vent Fans |
     | **7. Demi. Water**| WT | Process water supply. | 320 | 90 | **Highest** | **Temporary Supply** |
-    | **TOTAL STARTUP** | - | **Core Startup Scope** | **6,980** | **1,935** | - | **~30% of Total DI** |
+    | **TOTAL** | - | - | **6,980** | **1,935** | - | - |
     
     > **⚠️ Volumetric Note**: Total Area Construction Volume (**23,595 DI**) differs from the **Essential Start-up Scope** above. 
     > 1. **Field Erection Only**: DI values represent site welding/installation only (excl. Shop Fab).
