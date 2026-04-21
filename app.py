@@ -272,6 +272,13 @@ ESSENTIAL_SYSTEMS = [
 tab_dash, tab_rep = st.tabs(["📊 Dashboard View", "📋 Technical Report"])
 
 with tab_dash:
+    # Custom CSS for Table Alignment
+    st.markdown("""
+        <style>
+            th, td { text-align: center !important; }
+        </style>
+    """, unsafe_allow_html=True)
+    
     t_col, p_col = st.columns([8.2, 1.8])
     with t_col:
         st.markdown('<h1 style="font-size: 1.8rem; margin: 0; padding: 0;">🏗️ Project Simulation Dashboard: GT #11 Early Power</h1>', unsafe_allow_html=True)
