@@ -502,7 +502,7 @@ with tab_rep:
     
     ## 2. Pre-Commissioning Activity: CCW & Fuel Gas System
     - **Prior to Pre-Commissioning**: Formal completion of piping, supports, punch clearance, and pressure tests.
-    - **Operational Readiness**: Pre-fabricate temporary items (Launchers, Receivers) for immediate post-test installation.
+    - **Pre-Commissioning Readiness**: Pre-fabricate temporary items (Launchers, Receivers) for immediate post-test installation.
     - **Pre-Commissioning**: The 2-month window post-MC is driven by high-velocity flushing of the CCW and clean-pigging of the FG lines.
     
     ## 3. GT Anti-Icing System (Winter Operation)
