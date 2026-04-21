@@ -473,15 +473,18 @@ with tab_dash:
     st.markdown('</div>', unsafe_allow_html=True)
 # --- Technical Report Tab ---
 with tab_rep:
-    sub_c1, sub_c2 = st.columns([8.5, 1.5])
-    with sub_c2:
+    # Header row with Title and Print button
+    h_c1, h_c2 = st.columns([8.5, 1.5])
+    with h_c1:
+        st.markdown("<h1 style='margin-bottom:0; padding-bottom:0;'>GT #11 EARLY POWER PIPING REPORT</h1>", unsafe_allow_html=True)
+        st.write(f"**Date**: {datetime.date.today()} | **Operation Milestone**: Dec 31, 2026")
+    with h_c2:
+        st.markdown("<div style='text-align:right; margin-top:20px;'>", unsafe_allow_html=True)
         add_print_button()
+        st.markdown("</div>", unsafe_allow_html=True)
         
-    st.markdown(f"""
+    st.markdown("""
     <div class="report-card">
-    
-    # GT #11 EARLY POWER PIPING REPORT
-    **Date**: {datetime.date.today()} | **Operation Milestone**: Dec 31, 2026
     
     ---
     
