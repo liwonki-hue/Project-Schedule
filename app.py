@@ -511,7 +511,7 @@ with tab_rep:
     - **Piping Routing**: The AS/HW piping path encompasses: Aux. Boiler Building & HW Pump House → PR #4 → PR #3 → MB Structure → GT #11.
     - **Work Scope**: Installation of Unit B0 and B1 piping volumes is mandatory for this system to be functional for the winter startup.
     
-    ## 4. Resource Allocation Logic (Deep Dive)
+    ## 4. Resource Allocation Issue
     - **Workspace Constraint**: Manpower in Main Building Structure remains capped at **6 teams** due to elevation and space safety constraints.
     - **Dynamic Redistribution**: Teams will be prioritized for AS/HW and FG/CCW essential systems to meet the Dec 31 milestone.
     
