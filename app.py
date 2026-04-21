@@ -259,13 +259,13 @@ strat_bottleneck = "Main Building Structure"
 
 # --- Essential Systems Data ---
 ESSENTIAL_SYSTEMS = [
-    {"System": "Fuel Gas System (FG)", "Area": "Main Building / GT Area", "Description": "Distributes filtered and regulated fuel gas to GT combustion system.", "Criticality": "Mandatory", "Related Equipment": "FG Filter Separator, FG Heater", "Remark": ""},
-    {"System": "Closed Cooling Water (CCW)", "Area": "Main Building / PR", "Description": "Cooling for GT/ST bearings and accessory equipment. Requires Power Receiving.", "Criticality": "Mandatory", "Related Equipment": "CCW Heat Exchangers, CCW Pumps", "Remark": ""},
-    {"System": "Instrument Air (IA)", "Area": "All Areas", "Description": "Compressed air for pneumatic control valves and instruments.", "Criticality": "Operation", "Related Equipment": "Air Compressors, IA Dryers", "Remark": ""},
-    {"System": "Aux. Steam & Hot Water (AS/HW)", "Area": "AB Bld / PR#3/4 / MB", "Description": "Anti-Icing for GT Intake to prevent freezing (Dec 31 Startup Basis).", "Criticality": "Mandatory", "Related Equipment": "Aux. Boiler, HW Pumps, HX", "Remark": ""},
-    {"System": "Nitrogen System (N2)", "Area": "GT Area / PR", "Description": "Purging fuel gas lines and inerting systems before maintenance.", "Criticality": "Mandatory", "Related Equipment": "N2 Bottle Rack, Purge Panels", "Remark": ""},
-    {"System": "GT MISC (Vents)", "Area": "Main Building", "Description": "Safe venting of process gases and drainage of lube oil leakages.", "Criticality": "Mandatory", "Related Equipment": "GT Enclosure, Vent Fans", "Remark": ""},
-    {"System": "Demineralized Water (DW)", "Area": "Water Treatment / PR", "Description": "Supply of high-purity water for process requirements and cleaning.", "Criticality": "Highest", "Related Equipment": "DW Tank, DW Supply Pumps", "Remark": "Reviewing temporary demi. water supply via other power plant (by INTEGRA)"},
+    {"System": "1. Fuel Gas System (FG)", "Area": "MB / GT Area", "Description": "Main fuel supply to GT.", "DI": 1580, "EA": 420, "Criticality": "Mandatory", "Remark": "FG Filter Separator, FG Heater"},
+    {"System": "2. Closed Cooling Water (CCW)", "Area": "MB / PR", "Description": "GT/ST Bearing cooling.", "DI": 2450, "EA": 680, "Criticality": "Mandatory", "Remark": "Power Receiving Requirement"},
+    {"System": "3. Instrument Air (IA)", "Area": "All Areas", "Description": "Pneumatic control supply.", "DI": 850, "EA": 240, "Criticality": "Operation", "Remark": "Air Compressors, IA Dryers"},
+    {"System": "4. Aux. Steam & Hot Water (AS/HW)", "Area": "PR#3/4 / MB", "Description": "Anti-Icing supply path.", "DI": 1120, "EA": 310, "Criticality": "Mandatory", "Remark": "Aux. Boiler Integration"},
+    {"System": "5. Nitrogen System (N2)", "Area": "GT Area / PR", "Description": "Purging and inerting.", "DI": 210, "EA": 65, "Criticality": "Mandatory", "Remark": "N2 Bottle Rack, Purge Panels"},
+    {"System": "6. GT MISC (Vents)", "Area": "Main Building", "Description": "Process gas venting.", "DI": 450, "EA": 130, "Criticality": "Mandatory", "Remark": "GT Enclosure, Vent Fans"},
+    {"System": "7. Demineralized Water (DW)", "Area": "Water Treatment", "Description": "Process water supply.", "DI": 320, "EA": 90, "Criticality": "Highest", "Remark": "Temporary supply by INTEGRA"},
 ]
 
 # --- Presentation Layer ---
@@ -469,17 +469,18 @@ with tab_rep:
     - **Workspace Constraint**: Manpower in Main Building Structure remains capped at **6 teams** due to elevation and space safety constraints.
     - **Dynamic Redistribution**: Teams will be prioritized for AS/HW and FG/CCW essential systems to meet the Dec 31 milestone.
     
-    ## 5. Essential Systems & Criticality matrix
+    ## 5. Essential Systems & Criticality Matrix
     
-    | Essential System | Area | Description | Criticality | Related Equipment / Remark |
-    | :--- | :--- | :--- | :--- | :--- |
-    | **1. Fuel Gas** | MB / GT | High-pressure fuel distribution. | **Mandatory** | FG Filter Separator / Heater |
-    | **2. CCW** | MB / PR | Cooling for bearings/accessory equipment. | **Mandatory** | **Power Receiving Requirement** |
-    | **3. IA** | All | Instrument air for control valves. | **Operation** | Air Compressors / IA Dryers |
-    | **4. AS/HW** | AB / PR | Anti-Icing for winter startup. | **Mandatory** | **Aux. Boiler Integration** |
-    | **5. N2** | GT / PR | Purging and inerting for safety. | **Mandatory** | N2 Bottle Rack / Purge Panels |
-    | **6. GT MISC** | MB | Process gas venting and drainage. | **Mandatory** | GT Enclosure / Vent Fans |
-    | **7. Demi. Water**| WT / PR | Process water and cleaning supply. | **Highest** | **Temporary supply via other power plant (by INTEGRA)** |
+    | Essential System | Area | Description | Piping (DI) | Support (EA) | Criticality | Remark |
+    | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+    | **1. Fuel Gas** | MB / GT | Main fuel supply path. | 1,580 | 420 | **Mandatory** | FG Filter / Heater |
+    | **2. CCW** | MB / PR | Brg cooling system. | 2,450 | 680 | **Mandatory** | **Power Requirement** |
+    | **3. IA** | All | Instrument air supply. | 850 | 240 | **Operation** | Air Comp / Dryers |
+    | **4. AS/HW** | PR#3/4 / MB | Anti-Icing path. | 1,120 | 310 | **Mandatory** | **Aux Boiler Integration** |
+    | **5. N2** | GT / PR | Purging and inerting. | 210 | 65 | **Mandatory** | N2 Rack / Purge Panels |
+    | **6. GT MISC**| MB | Gas vent & drainage. | 450 | 130 | **Mandatory** | GT Encl / Vent Fans |
+    | **7. Demi. Water**| WT | Process water supply. | 320 | 90 | **Highest** | **Temporary Supply** |
+    | **TOTAL STARTUP** | - | **Core Startup Scope** | **6,980** | **1,935** | - | **~30% of Total DI** |
     
     > **⚠️ Volumetric Note**: Total Area Construction Volume (**23,595 DI**) differs from the **Essential Start-up Scope** above. 
     > 1. **Field Erection Only**: DI values represent site welding/installation only (excl. Shop Fab).
