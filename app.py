@@ -380,10 +380,13 @@ with tab_dash:
             )
 
         fig.update_layout(
-            margin=dict(l=0, r=40, t=45, b=0), # Increased top margin for staggered labels
-            xaxis_title=None, yaxis_title=None, 
+            height=450,
+            margin=dict(l=10, r=10, t=50, b=30),
+            xaxis=dict(title="", tickformat="%b %Y", side="bottom"),
+            yaxis=dict(title="", autorange="reversed"),  # Match table order (top to bottom)
             showlegend=False,
-            coloraxis_showscale=False # Remove color bar legend
+            plot_bgcolor="white",
+            paper_bgcolor="white"
         )
         st.plotly_chart(fig, use_container_width=True)
 
