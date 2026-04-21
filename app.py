@@ -259,7 +259,7 @@ strat_bottleneck = "Main Building Structure"
 
 # --- Essential Systems Data ---
 ESSENTIAL_SYSTEMS = [
-    {"System": "Fuel Gas & FGH System", "Area": "MB / GT / FGH", "Description": "Main & Performance heater fuel.", "DI": 2480, "EA": 610, "Criticality": "Mandatory", "Equipment": "Performance Heater & Final Filter", "Remark": ""},
+    {"System": "Fuel Gas & FGH System", "Area": "MB / GT / FGH", "Description": "Main & Performance heater fuel.", "DI": 2480, "EA": 610, "Criticality": "Mandatory", "Equipment": "FGSS System, Performance Heater & Final Filter", "Remark": ""},
     {"System": "Closed Cooling Water (CCW)", "Area": "MB / PR / PH#1 / FFC#1", "Description": "GT brg & FFC cooling.", "DI": 4120, "EA": 980, "Criticality": "Mandatory", "Equipment": "PH#1 & FFC#1 Integrated", "Remark": ""},
     {"System": "Instrument Air (IA)", "Area": "All Areas", "Description": "Pneumatic control supply.", "DI": 1150, "EA": 290, "Criticality": "Operation", "Equipment": "Air Compressors, IA Dryers", "Remark": ""},
     {"System": "Aux. Steam & Hot Water (AS/HW)", "Area": "PR#3/4 / MB", "Description": "Anti-Icing supply path.", "DI": 2650, "EA": 660, "Criticality": "Mandatory", "Equipment": "Aux. Boiler, Hot Water Supply Pump, Heat Exchanger", "Remark": ""},
@@ -519,7 +519,7 @@ with tab_rep:
     
     | Essential System | Area | Description | Piping (DI) | Support (EA) | Criticality | Relevant Equipment | Remark |
     | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-    | **1. Fuel Gas & FGH** | MB/GT/FGH | Performance Heater path. | 2,480 | 610 | **Mandatory** | Performance Heater & Filter | |
+    | **1. Fuel Gas & FGH** | MB/GT/FGH | Performance Heater path. | 2,480 | 610 | **Mandatory** | FGSS System, Performance Heater & Filter | |
     | **2. CCW** | MB/PR/PH1 | Brg & FFC cooling. | 4,120 | 980 | **Mandatory** | PH#1 & FFC#1 Integrated | |
     | **3. IA** | All | Instrument air supply. | 1,150 | 290 | **Operation** | Air Compressors, IA Dryers | |
     | **4. AS/HW** | PR#3/4/AB | Anti-Icing path. | 2,650 | 660 | **Mandatory** | Aux. Boiler, HW Pump, Heat Exchanger | |
