@@ -538,30 +538,30 @@ with tab_rep:
     
     ## 6. Action Items for On-time Completion
     
-    1. **Safety Priority**: Prioritize Fire Fighting & HVAC in electrical rooms <br>to allow Energizing without fire/overheating risk.
-    2. **Power Receiving**: Complete AIS/Transformer & Cable installation <br>to enable Power Receiving before CCW Flushing.
-    3. **Structural Early Handover**: Accelerate Pipe Rack & MB Structure delivery <br>through additional manpower and crash work.
-    4. **Double Shift**: Implement 24/7 welding for Header-to-Branch transitions <br>to maximize daily output in the Main Building.
+    1. **Safety Priority**: Prioritize Fire Fighting & HVAC in electrical rooms to allow Energizing without fire/overheating risk.
+    2. **Power Receiving**: Complete AIS/Transformer & Cable installation to enable Power Receiving before CCW Flushing.
+    3. **Structural Early Handover**: Accelerate Pipe Rack & MB Structure delivery through additional manpower and crash work.
+    4. **Double Shift**: Implement 24/7 welding for Header-to-Branch transitions to maximize daily output in the Main Building.
 
     ## 7. Strategic Risk & Implementation Constraints
     
     ### A. Piping Isolation & Loop Integrity (Flushing Requirements)
-    - **Issue**: GT #11 Early Power requires functional MB utility lines. <br>The integrated design normally requires all units to be interconnected.
-    - **Expected Impact**: Mediums will disperse through Units #2~4 header paths, <br>rendering independent pressurized flushing impossible.
-    - **Proposed Strategy**: Install **Blind Flanges or Isolation Valves** at Unit #1 Tees <br>to create a temporary **Closed System** for loop integrity.
+    - **Issue**: GT #11 Early Power requires functional MB utility lines. The integrated design normally requires all units to be interconnected.
+    - **Expected Impact**: Mediums will disperse through Units #2~4 header paths, rendering independent pressurized flushing impossible.
+    - **Proposed Strategy**: Install **Blind Flanges or Isolation Valves** at Unit #1 Tees to create a temporary **Closed System** for loop integrity.
 
     ### B. Operational Restrictions (Hot Work Prohibition)
-    - **Issue**: Introduction of Fuel Gas (FG) for GT #11 operation <br>will trigger strict safe-work protocols in the Main Building.
-    - **Expected Impact**: Mandatory **No-Hot-Work Restrictions** will indefinitely suspend <br>the installation of structural and piping systems for Units #2~4.
-    - **Proposed Strategy**: Finalize all critical header welding **prior to gas admission**. <br>Formally notify the client of the 'Dead Zone' for remaining works.
+    - **Issue**: Introduction of Fuel Gas (FG) for GT #11 operation will trigger strict safe-work protocols in the Main Building.
+    - **Expected Impact**: Mandatory **No-Hot-Work Restrictions** will indefinitely suspend the installation of structural and piping systems for Units #2~4.
+    - **Proposed Strategy**: Finalize all critical header welding **prior to gas admission**. Formally notify the client of the 'Dead Zone' for remaining works.
 
     ### C. Impact on Total Project Milestone (Design Sync Risk)
-    - **Issue**: Isolating Unit #1 for early startup is a significant deviation <br>from the core integrated Power Plant Design Concept.
-    - **Expected Impact**: Severe resource inefficiencies and spatial conflicts <br>will cause a **minimum 3-month delay** in total project completion.
-    - **Proposed Strategy**: Formally communicate the **Absolute Risk to Total Project COD**. <br>Note that GT #11 must eventually be **shut down** for future integration.
+    - **Issue**: Isolating Unit #1 for early startup is a significant deviation from the core integrated Power Plant Design Concept.
+    - **Expected Impact**: Severe resource inefficiencies and spatial conflicts will cause a **minimum 3-month delay** in total project completion.
+    - **Proposed Strategy**: Formally communicate the **Absolute Risk to Total Project COD**. Note that GT #11 must eventually be **shut down** for future integration.
     
     ---
-    *Disclaimer: Report updated to reflect Dec 31 Operation basis, Anti-Icing Mandatory requirement, <br>and Strategic Risks associated with early Unit #1 power generation.*
+    *Disclaimer: Report updated to reflect Dec 31 Operation basis, Anti-Icing Mandatory requirement, and Strategic Risks associated with early Unit #1 power generation.*
     
     </div>
     """, unsafe_allow_html=True)
