@@ -260,7 +260,7 @@ strat_bottleneck = "Main Building Structure"
 # --- Essential Systems Data ---
 ESSENTIAL_SYSTEMS = [
     {"System": "1. Fuel Gas System (FG)", "Area": "MB / GT Area", "Description": "Main fuel supply to GT.", "DI": 1850, "EA": 480, "Criticality": "Mandatory", "Remark": "FG Filter Separator, FG Heater"},
-    {"System": "2. Closed Cooling Water (CCW)", "Area": "MB / PR", "Description": "GT/ST Bearing cooling.", "DI": 2900, "EA": 750, "Criticality": "Mandatory", "Remark": "Power Receiving Requirement"},
+    {"System": "2. Closed Cooling Water (CCW)", "Area": "MB / PR / PH#1 / FFC#1", "Description": "GT brg & FFC cooling.", "DI": 3850, "EA": 940, "Criticality": "Mandatory", "Remark": "PH#1 & FFC#1 Integrated"},
     {"System": "3. Instrument Air (IA)", "Area": "All Areas", "Description": "Pneumatic control supply.", "DI": 980, "EA": 260, "Criticality": "Operation", "Remark": "Air Compressors, IA Dryers"},
     {"System": "4. Aux. Steam & Hot Water (AS/HW)", "Area": "PR#3/4 / MB", "Description": "Anti-Icing supply path.", "DI": 2450, "EA": 620, "Criticality": "Mandatory", "Remark": "HW Pump House & PR Pathway"},
     {"System": "5. Nitrogen System (N2)", "Area": "GT Area / PR", "Description": "Purging and inerting.", "DI": 280, "EA": 80, "Criticality": "Mandatory", "Remark": "N2 Bottle Rack, Purge Panels"},
@@ -474,13 +474,13 @@ with tab_rep:
     | Essential System | Area | Description | Piping (DI) | Support (EA) | Criticality | Remark |
     | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
     | **1. Fuel Gas** | MB / GT | Main fuel supply. | 1,850 | 480 | **Mandatory** | FG Filter / Heater |
-    | **2. CCW** | MB / PR | Brg cooling system. | 2,900 | 750 | **Mandatory** | **Power Requirement** |
+    | **2. CCW** | MB/PR/PH1 | Brg & FFC cooling. | 3,850 | 940 | **Mandatory** | **PH#1 & FFC#1 Incl.** |
     | **3. IA** | All | Instrument air supply. | 980 | 260 | **Operation** | Air Comp / Dryers |
     | **4. AS/HW** | PR#3/4/AB | Anti-Icing path. | 2,450 | 620 | **Mandatory** | **Pump House / PR Path** |
     | **5. N2** | GT / PR | Purging and inerting. | 280 | 80 | **Mandatory** | N2 Rack / Purge Panels |
     | **6. GT MISC**| MB | Gas vent & drainage. | 520 | 150 | **Mandatory** | GT Encl / Vent Fans |
     | **7. Demi. Water**| WT / PR | Process water supply. | 1,800 | 440 | **Highest** | **DW Tank & Pump Station** |
-    | **TOTAL** | - | - | **10,780** | **2,780** | - | - |
+    | **TOTAL** | - | - | **11,730** | **2,970** | - | - |
     
     > **⚠️ Volumetric Note**: Total Area Construction Volume (**23,595 DI**) differs from the **Essential Start-up Scope** above. 
     > 1. **Field Erection Only**: DI values represent site welding/installation only (excl. Shop Fab).
