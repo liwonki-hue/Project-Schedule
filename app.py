@@ -528,7 +528,7 @@ with tab_rep:
     | **7. Demi. Water**| WT / PR | Process water supply. | 2,000 | 480 | **Highest** | DW Tank & Pump Station | **Under review for sourcing from other power plant (by INTEGRA)** |
     | **TOTAL** | - | - | **13,370** | **3,290** | - | - | - |
     
-    > **⚠️ Volumetric Note**: Total Area Construction Volume (**23,595 DI**) differs from the **Essential Start-up Scope** (**13,370 DI**) documented above. 
+    > **⚠️ Volumetric Note**: Total Area Construction Volume (**29,534 DI**) differs from the **Essential Start-up Scope** (**13,370 DI**) documented above. 
     > 1. **Focus Area**: Reflecting only Unit B0 (Common) and B1 (Main) systems required for the Dec 31 Milestone.
     > 2. **Field Erection Only**: DI values represent site welding/installation only (excl. Shop Fab).
     > 3. **Volume Update**: Current figures reflect the official B0/B1 integration based on the latest Joint Master.
