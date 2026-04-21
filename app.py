@@ -252,7 +252,7 @@ tab_dash, tab_rep = st.tabs(["📊 Dashboard View", "📋 Technical Report"])
 with tab_dash:
     t_col, p_col = st.columns([8.2, 1.8])
     with t_col:
-        st.markdown('<h1 style="font-size: 1.8rem; margin: 0; padding: 0;">🏗️ Project Acceleration Dashboard: GT #11 Early Power</h1>', unsafe_allow_html=True)
+        st.markdown('<h1 style="font-size: 1.8rem; margin: 0; padding: 0;">🏗️ Project Simulation Dashboard: GT #11 Early Power</h1>', unsafe_allow_html=True)
     with p_col:
         add_print_button()
     
