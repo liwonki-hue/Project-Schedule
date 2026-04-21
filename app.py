@@ -325,11 +325,11 @@ with tab_dash:
         fig.add_vline(x=mc_date.timestamp() * 1000, line_dash="dash", line_color="red", line_width=2)
         fig.add_vline(x=pr_date.timestamp() * 1000, line_dash="dash", line_color="blue", line_width=2)
         
-        # Add Milestone Labels on TOP
-        fig.add_annotation(x=mc_date, y=1.1, yref="paper", text=f"<b>MC: {mc_date.strftime('%m/%d')}</b>", 
-                           showarrow=False, font=dict(color="red", size=12))
-        fig.add_annotation(x=pr_date, y=1.1, yref="paper", text=f"<b>Power: {pr_date.strftime('%m/%d')}</b>", 
-                           showarrow=False, font=dict(color="blue", size=12))
+        # Add Milestone Labels on TOP (Offset to prevent overlapping)
+        fig.add_annotation(x=pr_date, y=1.18, yref="paper", text=f"<b>Power: {pr_date.strftime('%m/%d')}</b>", 
+                           showarrow=False, font=dict(color="blue", size=11), xanchor="right", xshift=-5)
+        fig.add_annotation(x=mc_date, y=1.08, yref="paper", text=f"<b>MC: {mc_date.strftime('%m/%d')}</b>", 
+                           showarrow=False, font=dict(color="red", size=11), xanchor="left", xshift=5)
         
         # Add text labels for Start and Finish next to the bars
         for idx, row in df.iterrows():
@@ -355,7 +355,7 @@ with tab_dash:
             )
 
         fig.update_layout(
-            margin=dict(l=0, r=40, t=30, b=0), # Added top margin for labels
+            margin=dict(l=0, r=40, t=45, b=0), # Increased top margin for staggered labels
             xaxis_title=None, yaxis_title=None, 
             showlegend=False,
             coloraxis_showscale=False # Remove color bar legend
