@@ -497,7 +497,7 @@ with tab_rep:
     - **Safety Priority**: Energizing cannot proceed without the completion of **Fire Fighting (FF)** and **HVAC** systems to mitigate the risk of fire and equipment overheating.
     - **Impact**: Power Receiving must be completed *prior* to the CCW Flushing phase to ensure pump functionality.
 
-    ### B. Strategic Prerequisite: Main Building Steel Structure
+    ### B. Major Bottleneck Section: Main Building Steel Structure
     The Main Building Steel Structure remains the definitive piping bottleneck, as branch piping distributions depend on MB Structure certification.
     
     ## 2. Commissioning Strategy: CCW & Fuel Gas System
