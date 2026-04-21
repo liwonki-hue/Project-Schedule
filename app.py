@@ -552,7 +552,7 @@ with tab_rep:
 
     ### B. Operational Restrictions (Hot Work Prohibition)
     - Introduction of Fuel Gas (FG) for GT #11 operation will trigger strict safe-work protocols in the Main Building.
-    - Mandatory **No-Hot-Work Restrictions** will indefinitely suspend the installation of structural and piping systems for Units #2~4.
+    - Hot-Work Restrictions will indefinitely suspend the installation of structural and piping systems for Units #2~4.
     - Finalize all critical header welding prior to gas admission and formally notify the client of the 'Dead Zone' for remaining expansion works.
 
     ### C. Impact on Total Project Milestone (Design Sync Risk)
