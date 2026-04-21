@@ -455,9 +455,10 @@ with tab_rep:
     The Main Building Steel Structure remains the definitive piping bottleneck, as branch piping distributions depend on MB Structure certification.
     
     ## 2. Commissioning Strategy: CCW & Fuel Gas System
-    The 2-month window post-MC is driven by high-velocity flushing of the CCW and clean-pigging of the FG lines.
-    - **Technical Pre-requisites**: Execution of CCW Flushing and FG Pig Cleaning necessitates the absolute completion of all piping/support installation, formal punch clearance, and mandatory pressure testing.
-    - **Operational Readiness**: To ensure on-time commissioning and minimize lead-time, all temporary piping, Launchers, Receivers, and related items must be pre-fabricated and prepared. Installation of these components must proceed immediately following the completion of pressure tests.
+    - **Technical Pre-requisites**: Formal completion of piping, supports, punch clearance, and pressure tests.
+    - **Operational Readiness**: Pre-fabricate temporary items (Launchers, Receivers) for immediate post-test installation.  
+    
+    *The 2-month window post-MC is driven by high-velocity flushing of the CCW and clean-pigging of the FG lines.*
     
     ## 3. GT Anti-Icing System (Winter Operation)
     For the target operation date of **Dec 31, 2026**, the Anti-Icing system is mandatory to prevent GT Air Intake freezing.
