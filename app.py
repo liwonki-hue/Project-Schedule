@@ -243,7 +243,7 @@ ESSENTIAL_SYSTEMS = [
     {"System": "Nitrogen System (N2)", "Area": "GT Area / PR", "Description": "Purging fuel gas lines and inerting systems before maintenance.", "Criticality": "Mandatory", "Related Equipment": "N2 Bottle Rack, Purge Panels", "Remark": ""},
     {"System": "GT MISC (Vents)", "Area": "Main Building", "Description": "Safe venting of process gases and drainage of lube oil leakages.", "Criticality": "Mandatory", "Related Equipment": "GT Enclosure, Vent Fans", "Remark": ""},
     {"System": "Instrument Air (IA)", "Area": "All Areas", "Description": "Compressed air for pneumatic control valves and instruments.", "Criticality": "Operation", "Related Equipment": "Air Compressors, IA Dryers", "Remark": ""},
-    {"System": "Demineralized Water (DW)", "Area": "Water Treatment / PR", "Description": "Supply of high-purity water for process requirements and cleaning.", "Criticality": "Highest", "Related Equipment": "DW Tank, DW Supply Pumps", "Remark": "외부 플랜트에서 임시 조달 검토 중"},
+    {"System": "Demineralized Water (DW)", "Area": "Water Treatment / PR", "Description": "Supply of high-purity water for process requirements and cleaning.", "Criticality": "Highest", "Related Equipment": "DW Tank, DW Supply Pumps", "Remark": "Under review for temporary external purchase and procurement from outside plant"},
 ]
 
 # --- Presentation Layer ---
