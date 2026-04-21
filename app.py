@@ -457,7 +457,7 @@ with tab_rep:
     ## 2. Commissioning Strategy: CCW & Fuel Gas
     The 2-month window post-MC is driven by high-velocity flushing of the CCW and clean-pigging of the FG lines.
     
-    ## 3. Anti-Icing System: AS & HW Strategy
+    ## 3. GT Anti-Icing System (Winter Operation)
     For the target operation date of **Dec 31, 2026**, the Anti-Icing system is mandatory to prevent GT Air Intake freezing.
     - **System Logic**: Utilizes Steam from the Aux. Boiler to heat water, which is then circulated via Hot Water (HW) Supply Pumps and Heat Exchangers.
     - **Critical Routing**: The AS/HW piping path encompasses: Aux. Boiler Building & HW Pump House → PR #4 → PR #3 → MB Structure → GT #11.
