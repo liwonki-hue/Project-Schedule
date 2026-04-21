@@ -381,10 +381,11 @@ with tab_dash:
 
         fig.update_layout(
             height=450,
-            margin=dict(l=10, r=10, t=50, b=30),
+            margin=dict(l=10, r=40, t=50, b=30),  # Adjusted right margin for date labels
             xaxis=dict(title="", tickformat="%b %Y", side="bottom"),
             yaxis=dict(title="", autorange="reversed"),  # Match table order (top to bottom)
             showlegend=False,
+            coloraxis_showscale=False,  # REMOVE LEGEND
             plot_bgcolor="white",
             paper_bgcolor="white"
         )
