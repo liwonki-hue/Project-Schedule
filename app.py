@@ -381,9 +381,9 @@ with tab_dash:
     f1, f2, f3, f4, f5, f6 = st.columns(6)
     f1.markdown('<div class="flow-box"><b>1. Fabrication</b><br>Spool & Support Fabrication</div>', unsafe_allow_html=True)
     f2.markdown('<div class="flow-box"><b>2. Structure</b><br>Handover</div>', unsafe_allow_html=True)
-    f3.markdown('<div class="flow-box"><b>3. Access</b><br>Scaffolding (2 Weeks)</div>', unsafe_allow_html=True)
+    f3.markdown('<div class="flow-box"><b>3. Access</b><br>Scaffolding<br>(2 Weeks)</div>', unsafe_allow_html=True)
     f4.markdown('<div class="flow-box"><b>4. Erection</b><br>Header & Branches Piping</div>', unsafe_allow_html=True)
-    f5.markdown('<div class="flow-box"><b>5. Punch & Test</b><br>Pressure Test & Punch (2 Weeks)</div>', unsafe_allow_html=True)
+    f5.markdown('<div class="flow-box"><b>5. Punch & Test</b><br>Pressure Test & Punch<br>(2 Weeks)</div>', unsafe_allow_html=True)
     f6.markdown('<div class="flow-box"><b>6. Pre-Commissioning</b><br>CCW Flushing & FG Pig Cleaning<br>(2 Months)</div>', unsafe_allow_html=True)
 
     st.subheader("✅ Essential Systems for GT #11 Start-up")
