@@ -430,10 +430,8 @@ with tab_dash:
     st.markdown('</div>', unsafe_allow_html=True)
 # --- Technical Report Tab ---
 with tab_rep:
-    rt_col, rp_col = st.columns([8.5, 1.5])
-    with rt_col:
-        st.title("📋 Technical Report: GT #11 Early Power")
-    with rp_col:
+    sub_c1, sub_c2 = st.columns([8.5, 1.5])
+    with sub_c2:
         add_print_button()
         
     st.markdown(f"""
