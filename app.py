@@ -259,13 +259,13 @@ strat_bottleneck = "Main Building Structure"
 
 # --- Essential Systems Data ---
 ESSENTIAL_SYSTEMS = [
-    {"System": "Fuel Gas & FGH System", "Area": "MB / GT / FGH", "Description": "Main & Performance heater fuel.", "DI": 2480, "EA": 610, "Criticality": "Mandatory", "Remark": "Official Joint Master Scope"},
-    {"System": "Closed Cooling Water (CCW)", "Area": "MB / PR / PH#1 / FFC#1", "Description": "GT brg & FFC cooling.", "DI": 4120, "EA": 980, "Criticality": "Mandatory", "Remark": "Unit B0/B1 Circuit Complete"},
-    {"System": "Instrument Air (IA)", "Area": "All Areas", "Description": "Pneumatic control supply.", "DI": 1150, "EA": 290, "Criticality": "Operation", "Remark": "Start-up Essential Path"},
-    {"System": "Aux. Steam & Hot Water (AS/HW)", "Area": "PR#3/4 / MB", "Description": "Anti-Icing supply path.", "DI": 2650, "EA": 660, "Criticality": "Mandatory", "Remark": "Full Distribution B0 to B1"},
-    {"System": "Nitrogen System (N2)", "Area": "GT Area / PR", "Description": "Purging and inerting.", "DI": 320, "EA": 90, "Criticality": "Mandatory", "Remark": "Skid/Purge Panels Only"},
-    {"System": "GT MISC (Vents)", "Area": "Main Building", "Description": "Process gas venting.", "DI": 650, "EA": 180, "Criticality": "Mandatory", "Remark": "B1 Enclosure Systems"},
-    {"System": "Demineralized Water (DW)", "Area": "Water Treatment", "Description": "Process water supply.", "DI": 2000, "EA": 480, "Criticality": "Highest", "Remark": "DW Tank to Main Distribution"}
+    {"System": "Fuel Gas & FGH System", "Area": "MB / GT / FGH", "Description": "Main & Performance heater fuel.", "DI": 2480, "EA": 610, "Criticality": "Mandatory", "Remark": "Incl. Performance Heater & Final Filter"},
+    {"System": "Closed Cooling Water (CCW)", "Area": "MB / PR / PH#1 / FFC#1", "Description": "GT brg & FFC cooling.", "DI": 4120, "EA": 980, "Criticality": "Mandatory", "Remark": "PH#1 & FFC#1 Integrated"},
+    {"System": "Instrument Air (IA)", "Area": "All Areas", "Description": "Pneumatic control supply.", "DI": 1150, "EA": 290, "Criticality": "Operation", "Remark": "Air Compressors, IA Dryers"},
+    {"System": "Aux. Steam & Hot Water (AS/HW)", "Area": "PR#3/4 / MB", "Description": "Anti-Icing supply path.", "DI": 2650, "EA": 660, "Criticality": "Mandatory", "Remark": "HW Pump House & PR Pathway"},
+    {"System": "Nitrogen System (N2)", "Area": "GT Area / PR", "Description": "Purging and inerting.", "DI": 320, "EA": 90, "Criticality": "Mandatory", "Remark": "N2 Bottle Rack, Purge Panels"},
+    {"System": "GT MISC (Vents)", "Area": "Main Building", "Description": "Process gas venting.", "DI": 650, "EA": 180, "Criticality": "Mandatory", "Remark": "GT Enclosure, Vent Fans"},
+    {"System": "Demineralized Water (DW)", "Area": "Water Treatment", "Description": "Process water supply.", "DI": 2000, "EA": 480, "Criticality": "Highest", "Remark": "DW Tank & Pump Station"}
 ]
 
 # --- Presentation Layer ---
