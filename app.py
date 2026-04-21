@@ -293,15 +293,15 @@ with tab_dash:
     
     # Major Constraints Alert
     st.markdown(f"""
-        <div style="background-color:#fef2f2; padding:15px; border-radius:10px; border-left:8px solid #ef4444; margin-bottom:20px;">
-            <span style="font-size:1.15rem; font-weight:bold; color:#991b1b;">
-                🚨 Ultimate Bottleneck in timeline : {strat_bottleneck} (Structure Access for header piping installation) | Target Float: {net_float} Days
-            </span>
-        </div>
         <div style="background-color:#fff3e0; padding:15px; border-radius:10px; border-left:8px solid #ff9800; margin-bottom:10px;">
             <span style="font-size:1.15rem; font-weight:bold; color:#e65100;">
                 ⚠️ Major Constraint: Power Receiving must be completed before CCW/HW Pump operation. 
                 Energizing requires FF (Fire Fighting) & HVAC installation to prevent overheating/fire.
+            </span>
+        </div>
+        <div style="background-color:#e0f2f1; padding:15px; border-radius:10px; border-left:8px solid #00897b; margin-bottom:20px;">
+            <span style="font-size:1.15rem; font-weight:bold; color:#004d40;">
+                🚨 Ultimate Bottleneck in timeline : {strat_bottleneck} (Structure Access for header piping installation) | Target Float: {net_float} Days
             </span>
         </div>
     """, unsafe_allow_html=True)
