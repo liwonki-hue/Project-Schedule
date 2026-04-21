@@ -27,7 +27,7 @@ st.markdown("""
     /* Report Font Adjustments: Titles 1.1x larger than baseline */
     .report-card h2 { font-size: 1.45rem !important; margin-top: 15px !important; color: #1e293b !important; }
     .report-card h3 { font-size: 1.25rem !important; margin-top: 10px !important; color: #475569 !important; }
-    .report-card p, .report-card li { font-size: 1.2rem !important; line-height: 1.5 !important; }
+    .report-card p, .report-card li { font-size: 1.2rem !important; line-height: 1.1 !important; }
     
     /* Enhanced Table Styling */
     .report-card table { width: 50% !important; border-collapse: collapse !important; margin-top: 15px !important; }
@@ -478,7 +478,7 @@ with tab_rep:
     h_c1, h_c2 = st.columns([8.5, 1.5])
     with h_c1:
         st.markdown("<h1 style='margin-bottom:0; padding-bottom:0;'>GT #11 EARLY POWER PIPING REPORT</h1>", unsafe_allow_html=True)
-        st.write(f"**Date**: {datetime.date.today()} | **Operation Milestone**: Dec 31, 2026")
+        # Date and Milestone line removed
     with h_c2:
         st.markdown("<div style='text-align:right; margin-top:20px;'>", unsafe_allow_html=True)
         add_print_button()
