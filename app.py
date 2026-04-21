@@ -28,6 +28,7 @@ st.markdown("""
     .report-card h2 { font-size: 1.45rem !important; margin-top: 5px !important; margin-bottom: 5px !important; color: #1e293b !important; }
     .report-card h3 { font-size: 1.25rem !important; margin-top: 5px !important; margin-bottom: 2px !important; color: #475569 !important; }
     .report-card p, .report-card li { font-size: 1.2rem !important; line-height: 1.1 !important; margin-bottom: 5pt !important; }
+    .report-card ul, .report-card ol { margin-top: 5pt !important; margin-bottom: 5pt !important; }
     
     /* Enhanced Table Styling */
     .report-card table { width: 50% !important; border-collapse: collapse !important; margin-top: 15px !important; }
