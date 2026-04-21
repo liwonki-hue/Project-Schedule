@@ -307,6 +307,8 @@ with tab_dash:
     left, right = st.columns([6.8, 3.2])
     with left:
         st.subheader("📊 Detailed Milestone Forecast")
+        # Align table rows with chart bars by adding space
+        st.markdown('<div style="height: 40px;"></div>', unsafe_allow_html=True)
         df_view = df.copy()
         # Format for display
         df_view["Work Teams Temp"] = df_view["Work Teams"].map(lambda x: f"{x:.1f}")
@@ -335,8 +337,6 @@ with tab_dash:
     
     with right:
         st.subheader("📅 Construction Path")
-        # Align chart bars with table rows (offset for table header height)
-        st.markdown("<div style='height: 40px;'></div>", unsafe_allow_html=True)
         # --- Enhanced Chart: Add Start/Finish Labels ---
         fig = px.timeline(df, x_start="Handover", x_end="Pressure Test Finish", y="Area", 
                           color="Float", color_continuous_scale=["#ef4444", "#22c55e"], height=250)
