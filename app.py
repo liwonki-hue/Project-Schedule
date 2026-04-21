@@ -380,8 +380,8 @@ with tab_dash:
             )
 
         fig.update_layout(
-            height=450,
-            margin=dict(l=10, r=40, t=50, b=30),  # Adjusted right margin for date labels
+            height=380,
+            margin=dict(l=10, r=40, t=30, b=30),  # Reduced top margin for alignment
             xaxis=dict(title="", tickformat="%b %Y", side="bottom"),
             yaxis=dict(title="", autorange="reversed"),  # Match table order (top to bottom)
             showlegend=False,
