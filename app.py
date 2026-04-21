@@ -412,9 +412,23 @@ with tab_dash:
     f6.markdown('<div class="flow-box"><b>6. Pre-Commissioning</b><br>CCW Flushing & FG Pig Cleaning<br>(2 Months)</div>', unsafe_allow_html=True)
 
     st.subheader("✅ Essential Systems for GT #11 Start-up")
-    df_e = pd.DataFrame(ESSENTIAL_SYSTEMS)
-    df_e.index = np.arange(1, len(df_e) + 1)
-    st.table(df_e)
+    df_ess = pd.DataFrame(ESSENTIAL_SYSTEMS)
+    
+    # Add Total Row
+    total_di = df_ess['DI'].sum()
+    total_ea = df_ess['EA'].sum()
+    total_row = pd.DataFrame([{
+        "System": "TOTAL",
+        "Area": "-",
+        "Description": "-",
+        "DI": total_di,
+        "EA": total_ea,
+        "Criticality": "-",
+        "Remark": "-"
+    }])
+    df_ess = pd.concat([df_ess, total_row], ignore_index=True)
+    
+    st.table(df_ess)
 
     st.subheader("💡 Infrastructure Dependency & Solution")
     st.markdown(f"""
