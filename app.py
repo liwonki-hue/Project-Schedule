@@ -351,10 +351,10 @@ with tab_dash:
                       line=dict(color="red", width=2, dash="dash"))
         
         # Add Milestone Labels on TOP (Center-aligned on lines, staggered heights to prevent overlap)
-        fig.add_annotation(x=pr_date, y=1.15, yref="paper", text=f"<b>Power Receiving: {pr_date.strftime('%m/%d')}</b>", 
-                           showarrow=False, font=dict(color="blue", size=11), xanchor="center", xshift=0)
-        fig.add_annotation(x=mc_date, y=1.05, yref="paper", text=f"<b>MC: {mc_date.strftime('%m/%d')}</b>", 
-                           showarrow=False, font=dict(color="red", size=11), xanchor="center", xshift=0)
+        fig.add_annotation(x=pr_date, y=1.10, yref="paper", text=f"<b>Power Receiving: {pr_date.strftime('%m/%d')}</b>", 
+                           showarrow=False, font=dict(color="blue", size=10), xanchor="center", xshift=0)
+        fig.add_annotation(x=mc_date, y=1.02, yref="paper", text=f"<b>MC: {mc_date.strftime('%m/%d')}</b>", 
+                           showarrow=False, font=dict(color="red", size=10), xanchor="center", xshift=0)
         
         # Add text labels for Start and Finish next to the bars
         for idx, row in df.iterrows():
@@ -363,7 +363,7 @@ with tab_dash:
                 x=row["Handover"], y=row["Area"],
                 text=f"<b>{row['Handover'].strftime('%m/%d')}</b>",
                 showarrow=False, xanchor='right', xshift=-10,
-                font=dict(size=11, color="#334155")
+                font=dict(size=10, color="#334155")
             )
             # Finish Date (Right)
             f_finish = pd.to_datetime(row["Pressure Test Finish"])
@@ -376,12 +376,12 @@ with tab_dash:
                 x=row["Pressure Test Finish"], y=row["Area"],
                 text=f"<b>{row['Pressure Test Finish'].strftime('%m/%d')}</b>",
                 showarrow=False, xanchor='left', xshift=10,
-                font=dict(size=11, color=f_color)
+                font=dict(size=10, color=f_color)
             )
 
         fig.update_layout(
-            height=410,
-            margin=dict(l=10, r=40, t=50, b=30),  # Increased top margin to show labels
+            height=360,
+            margin=dict(l=10, r=40, t=40, b=10),  # Tighter margins
             xaxis=dict(title="", tickformat="%b %Y", side="bottom"),
             yaxis=dict(title="", autorange="reversed"),  # Match table order (top to bottom)
             showlegend=False,
@@ -389,7 +389,10 @@ with tab_dash:
             plot_bgcolor="white",
             paper_bgcolor="white"
         )
+        
+        st.markdown('<div style="margin-top: -45px;">', unsafe_allow_html=True)
         st.plotly_chart(fig, use_container_width=True)
+        st.markdown('</div>', unsafe_allow_html=True)
 
     # --- Compact Lower Section ---
     st.markdown("""
