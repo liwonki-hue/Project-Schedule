@@ -447,7 +447,7 @@ with tab_rep:
     ## 1. Project Sequence & Major Constraints
     The GT #11 startup is governed not only by piping progress but also by critical infrastructure and safety prerequisites.
     
-    ### A. Permanent Power Receiving (The Power Milestone)
+    ### A. Permanent Power Receiving
     Power Receiving is a **non-negotiable milestone** that must occur before the operation of all auxiliary equipment, including CCW Pumps, Air Compressors, and HW Pumps.
     - **Pre-requisites**: Installation of AIS (Air Insulated Switchgear), Transformers, Electrical Panels, and Main Cabling must be finalized.
     - **Safety Priority**: Energizing cannot proceed without the completion of **Fire Fighting (FF)** and **HVAC** systems to mitigate the risk of fire and equipment overheating.
