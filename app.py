@@ -437,6 +437,10 @@ with tab_dash:
     }])
     df_ess = pd.concat([df_ess, total_row], ignore_index=True)
     
+    # Set index to 1, 2, 3... and empty string for TOTAL
+    new_index_ess = [str(i+1) for i in range(len(df_ess)-1)] + [""]
+    df_ess.index = new_index_ess
+    
     st.table(df_ess)
 
     st.subheader("💡 Infrastructure Dependency & Solution")
