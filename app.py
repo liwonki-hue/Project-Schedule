@@ -301,12 +301,12 @@ with tab_dash:
         # --- Add Total Row ---
         total_row = pd.DataFrame([{
             "Area": "TOTAL",
-            "Schedule Status": "-",
+            "Schedule Status": "",
             "Work Teams": f"{df['Work Teams'].sum():.1f}", 
-            "Handover": "-",
+            "Handover": "",
             "Piping(DI)": int(df["Piping(DI)"].sum()),
             "Support(EA)": int(df["Support(EA)"].sum()),
-            "Pressure Test Finish": "-",
+            "Pressure Test Finish": "",
             "Float": int(df["Float"].min())
         }])
         df_display = pd.concat([df_display, total_row], ignore_index=True)
