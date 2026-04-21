@@ -259,14 +259,13 @@ strat_bottleneck = "Main Building Structure"
 
 # --- Essential Systems Data ---
 ESSENTIAL_SYSTEMS = [
-    {"System": "Fuel Gas & FGH System", "Area": "MB / GT / FGH", "Description": "Main & Performance heater fuel.", "DI": 2480, "EA": 610, "Criticality": "Mandatory", "Remark": "Unit B0/B1 Integrated Scope"},
-    {"System": "Closed Cooling Water (CCW)", "Area": "MB / PR / PH#1 / FFC#1", "Description": "GT brg & FFC cooling.", "DI": 4120, "EA": 980, "Criticality": "Mandatory", "Remark": "PH#1 & B1 Turbine Area"},
-    {"System": "Instrument Air (IA)", "Area": "All Areas", "Description": "Pneumatic control supply.", "DI": 1150, "EA": 290, "Criticality": "Operation", "Remark": "IA Compressor & Receiver B0/B1"},
-    {"System": "Aux. Steam & Hot Water (AS/HW)", "Area": "PR#3/4 / MB", "Description": "Anti-Icing supply path.", "DI": 2650, "EA": 660, "Criticality": "Mandatory", "Remark": "HW Pump House & Distribution"},
-    {"System": "Nitrogen System (N2)", "Area": "GT Area / PR", "Description": "Purging and inerting.", "DI": 320, "EA": 90, "Criticality": "Mandatory", "Remark": "B1 Enclosure Purge System"},
-    {"System": "Fire Fighting (FF)", "Area": "Substation / B1 / B0", "Description": "Safety & Fire Protection.", "DI": 850, "EA": 240, "Criticality": "Highest", "Remark": "Mandatory for Energization"},
-    {"System": "GT MISC (Vents)", "Area": "Main Building", "Description": "Process gas venting.", "DI": 650, "EA": 180, "Criticality": "Mandatory", "Remark": "GT Enclosure Vent System"},
-    {"System": "Demineralized Water (DW)", "Area": "Water Treatment", "Description": "Process water supply.", "DI": 2000, "EA": 480, "Criticality": "Highest", "Remark": "DW Tank & B1 Supply Line"}
+    {"System": "Fuel Gas & FGH System", "Area": "MB / GT / FGH", "Description": "Main & Performance heater fuel.", "DI": 2480, "EA": 610, "Criticality": "Mandatory", "Remark": "Official Joint Master Scope"},
+    {"System": "Closed Cooling Water (CCW)", "Area": "MB / PR / PH#1 / FFC#1", "Description": "GT brg & FFC cooling.", "DI": 4120, "EA": 980, "Criticality": "Mandatory", "Remark": "Unit B0/B1 Circuit Complete"},
+    {"System": "Instrument Air (IA)", "Area": "All Areas", "Description": "Pneumatic control supply.", "DI": 1150, "EA": 290, "Criticality": "Operation", "Remark": "Start-up Essential Path"},
+    {"System": "Aux. Steam & Hot Water (AS/HW)", "Area": "PR#3/4 / MB", "Description": "Anti-Icing supply path.", "DI": 2650, "EA": 660, "Criticality": "Mandatory", "Remark": "Full Distribution B0 to B1"},
+    {"System": "Nitrogen System (N2)", "Area": "GT Area / PR", "Description": "Purging and inerting.", "DI": 320, "EA": 90, "Criticality": "Mandatory", "Remark": "Skid/Purge Panels Only"},
+    {"System": "GT MISC (Vents)", "Area": "Main Building", "Description": "Process gas venting.", "DI": 650, "EA": 180, "Criticality": "Mandatory", "Remark": "B1 Enclosure Systems"},
+    {"System": "Demineralized Water (DW)", "Area": "Water Treatment", "Description": "Process water supply.", "DI": 2000, "EA": 480, "Criticality": "Highest", "Remark": "DW Tank to Main Distribution"}
 ]
 
 # --- Presentation Layer ---
@@ -508,15 +507,14 @@ with tab_rep:
     
     | Essential System | Area | Description | Piping (DI) | Support (EA) | Criticality | Remark |
     | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-    | **1. Fuel Gas & FGH** | MB/GT/FGH | Performance Heater path. | 2,480 | 610 | **Mandatory** | **Unit B0/B1 Integrated** |
-    | **2. CCW** | MB/PR/PH1 | Brg & FFC cooling. | 4,120 | 980 | **Mandatory** | **PH#1 & B1 Turbine** |
-    | **3. IA** | All | Instrument air supply. | 1,150 | 290 | **Operation** | IA Compressor & B1 |
-    | **4. AS/HW** | PR#3/4/AB | Anti-Icing path. | 2,650 | 660 | **Mandatory** | **Pump House / PR Path** |
-    | **5. N2** | GT / PR | Purging and inerting. | 320 | 90 | **Mandatory** | Enclosure Purge |
-    | **6. Fire Fighting (FF)**| SUB / B1 | Safety & Fire Protection.| 850 | 240 | **Highest** | **Mandatory for Saftey** |
-    | **7. GT MISC**| MB | Gas vent & drainage. | 650 | 180 | **Mandatory** | GT Encl / Vent Fans |
-    | **8. Demi. Water**| WT / PR | Process water supply. | 2,000 | 480 | **Highest** | **DW Tank & B1 Supply** |
-    | **TOTAL** | - | - | **14,220** | **3,530** | - | - |
+    | **1. Fuel Gas & FGH** | MB/GT/FGH | Performance Heater path. | 2,480 | 610 | **Mandatory** | **JM Official Scope** |
+    | **2. CCW** | MB/PR/PH1 | Brg & FFC cooling. | 4,120 | 980 | **Mandatory** | **B0/B1 Cycle Complete** |
+    | **3. IA** | All | Instrument air supply. | 1,150 | 290 | **Operation** | IA System Final |
+    | **4. AS/HW** | PR#3/4/AB | Anti-Icing path. | 2,650 | 660 | **Mandatory** | **B0 -> B1 Distribution** |
+    | **5. N2** | GT / PR | Purging and inerting. | 320 | 90 | **Mandatory** | Purge Panels |
+    | **6. GT MISC**| MB | Gas vent & drainage. | 650 | 180 | **Mandatory** | Enclosure / Vent |
+    | **7. Demi. Water**| WT / PR | Process water supply. | 2,000 | 480 | **Highest** | **DW Tank Distribution** |
+    | **TOTAL** | - | - | **13,370** | **3,290** | - | - |
     
     > **⚠️ Volumetric Note**: Total Area Construction Volume (**23,595 DI**) differs from the **Essential Start-up Scope** above. 
     > 1. **Field Erection Only**: DI values represent site welding/installation only (excl. Shop Fab).
