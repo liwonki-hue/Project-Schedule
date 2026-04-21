@@ -543,7 +543,7 @@ with tab_rep:
     3. **Structural Early Handover**: Accelerate Pipe Rack & MB Structure delivery through additional manpower and crash work.
     4. **Double Shift**: Implement 24/7 welding for Header-to-Branch transitions to maximize daily output in the Main Building.
 
-    ## 7. Strategic Risk & Implementation Constraints
+    ## 7. Project Risk & Implementation Constraints
     
     ### A. Piping Isolation & Loop Integrity (Flushing Requirements)
     - GT #11 Early Power requires functional MB utility lines. The integrated design normally requires all units to be interconnected.
