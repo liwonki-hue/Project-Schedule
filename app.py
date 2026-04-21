@@ -473,7 +473,7 @@ with tab_dash:
     st.markdown(f"""
         <div class="solution-card">
             <div class="solution-content">
-                <div style="margin-bottom: 8pt;">1. <b>Safety Priority</b>: Prioritize Fire Fighting & HVAC in electrical rooms to allow Energizing without fire/overheating risk.</div>
+                <div style="margin-bottom: 8pt;">1. <b>Safety Priority</b>: Prioritize Fire Fighting & HVAC in electrical rooms to allow Energizing without fire/overheating risk (by INTEGRA)</div>
                 <div style="margin-bottom: 8pt;">2. <b>Power Receiving</b>: Complete AIS/Transformer & Cable installation to enable Power Receiving before CCW Flushing.</div>
                 <div style="margin-bottom: 8pt;">3. <b>Structural Early Handover</b>: Accelerate Pipe Rack & MB Structure delivery through additional manpower and crash work.</div>
                 <div>4. <b>Double Shift</b>: Implement 24/7 welding for Main Building Structural Header-to-Branch transitions.</div>
