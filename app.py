@@ -341,7 +341,8 @@ with tab_dash:
                 font=dict(size=11, color="#334155")
             )
             # Finish Date (Right)
-            if row["Pressure Test Finish"] > mc_date: # Highlight delay
+            f_finish = pd.to_datetime(row["Pressure Test Finish"])
+            if f_finish > mc_date: # Highlight delay
                 f_color = "#ef4444"
             else:
                 f_color = "#334155"
