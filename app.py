@@ -351,9 +351,9 @@ with tab_dash:
                       line=dict(color="red", width=2, dash="dash"))
         
         # Add Milestone Labels on TOP (Center-aligned on lines, staggered heights to prevent overlap)
-        fig.add_annotation(x=pr_date, y=1.18, yref="paper", text=f"<b>Power Receiving: {pr_date.strftime('%m/%d')}</b>", 
+        fig.add_annotation(x=pr_date, y=1.15, yref="paper", text=f"<b>Power Receiving: {pr_date.strftime('%m/%d')}</b>", 
                            showarrow=False, font=dict(color="blue", size=11), xanchor="center", xshift=0)
-        fig.add_annotation(x=mc_date, y=1.08, yref="paper", text=f"<b>MC: {mc_date.strftime('%m/%d')}</b>", 
+        fig.add_annotation(x=mc_date, y=1.05, yref="paper", text=f"<b>MC: {mc_date.strftime('%m/%d')}</b>", 
                            showarrow=False, font=dict(color="red", size=11), xanchor="center", xshift=0)
         
         # Add text labels for Start and Finish next to the bars
@@ -380,8 +380,8 @@ with tab_dash:
             )
 
         fig.update_layout(
-            height=380,
-            margin=dict(l=10, r=40, t=30, b=30),  # Reduced top margin for alignment
+            height=410,
+            margin=dict(l=10, r=40, t=50, b=30),  # Increased top margin to show labels
             xaxis=dict(title="", tickformat="%b %Y", side="bottom"),
             yaxis=dict(title="", autorange="reversed"),  # Match table order (top to bottom)
             showlegend=False,
