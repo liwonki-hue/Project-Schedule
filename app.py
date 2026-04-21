@@ -558,7 +558,7 @@ with tab_rep:
     ### C. Impact on Total Project Milestone (Design Sync Risk)
     - Isolating Unit #1 for early startup is a significant deviation from the core integrated Power Plant Design Concept.
     - Severe resource inefficiencies and spatial conflicts will cause a **minimum 3-month delay** in total project completion.
-    - Formally communicate the **Absolute Risk to Total Project COD** to the client, noting that GT #11 must eventually be **shut down** for future final integration.
+    - Align with client regarding potential schedule extensions and technical requirements for final unit integration.
     
     ---
     *Disclaimer: Report updated to reflect Dec 31 Operation basis, Anti-Icing Mandatory requirement, and Strategic Risks associated with early Unit #1 power generation.*
