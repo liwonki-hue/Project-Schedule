@@ -52,22 +52,24 @@ st.markdown("""
     [data-testid="stMetric"] { margin-bottom: -1rem !important; text-align: center; }
     
     .solution-card {
-        background: #f0f7ff !important; /* Light blue background for emphasis */
-        border-left: 5px solid #0056b3 !important;
-        padding: 15px !important;
-        border-radius: 4px !important;
-        color: #004085 !important; /* Strong blue text */
-        line-height: 1.4 !important;
+        background: #eef2ff !important; /* Indigo-tinted background */
+        border-left: 6px solid #4338ca !important; /* Indigo border */
+        padding: 20px !important;
+        border-radius: 8px !important;
+        color: #1e1b4b !important; /* Deep indigo text */
+        line-height: 1.6 !important;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
     .solution-title {
-        font-size: 1.5rem !important;
+        font-size: 1.6rem !important;
         font-weight: 800 !important;
-        margin-bottom: 8px !important;
+        margin-bottom: 12px !important;
         display: block;
-        color: #003366 !important;
+        color: #312e81 !important;
     }
     .solution-content {
-        font-size: 1.15rem !important;
+        font-size: 1.25rem !important;
+        font-weight: 700 !important;
     }
 
     [data-testid="stHeader"] { display: none; }
@@ -395,10 +397,10 @@ with tab_dash:
     st.markdown(f"""
         <div class="solution-card">
             <div class="solution-content">
-                <div style="margin-bottom: 5pt;">1. <b>Safety Priority</b>: Prioritize Fire Fighting & HVAC in electrical rooms to allow Energizing without fire/overheating risk.</div>
-                <div style="margin-bottom: 5pt;">2. <b>Power Receiving</b>: Complete AIS/Transformer & Cable installation to enable Power Receiving before CCW Flushing.</div>
-                <div style="margin-bottom: 5pt;">3. <b>Structural Handover</b>: 선행 공정인 Mech. / Arch. Team 추가 자원 투입 및 돌관 작업을 통한 Pipe Rack & MB Structure 조기 인도</div>
-                <div>4. <b>Double Shift</b>: <b>Implement 24/7 welding for Main Building Structural Header-to-Branch transitions.</b></div>
+                <div style="margin-bottom: 8pt;">1. <b>Safety Priority</b>: Prioritize Fire Fighting & HVAC in electrical rooms to allow Energizing without fire/overheating risk.</div>
+                <div style="margin-bottom: 8pt;">2. <b>Power Receiving</b>: Complete AIS/Transformer & Cable installation to enable Power Receiving before CCW Flushing.</div>
+                <div style="margin-bottom: 8pt;">3. <b>Structural Early Handover</b>: Accelerate Pipe Rack & MB Structure delivery through additional manpower and crash work by preceding Mechanical/Architectural teams.</div>
+                <div>4. <b>Double Shift</b>: Implement 24/7 welding for Main Building Structural Header-to-Branch transitions.</div>
             </div>
         </div>
     """, unsafe_allow_html=True)
