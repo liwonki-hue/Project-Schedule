@@ -553,7 +553,7 @@ with tab_rep:
     ### B. Operational Restrictions (Hot Work Prohibition)
     - Introduction of Fuel Gas (FG) for GT #11 operation will trigger strict safe-work protocols in the Main Building.
     - Hot-Work Restrictions will indefinitely suspend the installation of structural and piping systems for Units #2~4.
-    - Completion of all critical header welding is required prior to gas admission to define and manage 'Dead Zone' operational constraints for remaining expansion work.
+    - Completion of all critical header welding is required prior to gas admission to define and manage 'Dead Zone' for remaining expansion work.
 
     ### C. Impact on Total Project Milestone (Design Sync Risk)
     - Isolating Unit #1 for early startup is a significant deviation from the core integrated Power Plant Design Concept.
