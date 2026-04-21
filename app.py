@@ -237,13 +237,13 @@ strat_bottleneck = "Main Building Structure"
 
 # --- Essential Systems Data ---
 ESSENTIAL_SYSTEMS = [
-    {"System": "Demineralized Water (DW)", "Area": "Water Treatment / PR", "Description": "Supply of high-purity water for process requirements and cleaning.", "Criticality": "Highest", "Remark": "DW Tank, DW Supply Pumps"},
-    {"System": "Closed Cooling Water (CCW)", "Area": "Main Building / PR", "Description": "Cooling for GT/ST bearings and accessory equipment. Requires Power Receiving.", "Criticality": "Mandatory", "Remark": "CCW Heat Exchangers, CCW Pumps"},
-    {"System": "Aux. Steam & Hot Water (AS/HW)", "Area": "AB Bld / PR#3/4 / MB", "Description": "Anti-Icing for GT Intake to prevent freezing (Dec 31 Startup Basis).", "Criticality": "Mandatory", "Remark": "Aux. Boiler, HW Pumps, HX"},
-    {"System": "Fuel Gas System (FG)", "Area": "Main Building / GT Area", "Description": "Distributes filtered and regulated fuel gas to GT combustion system.", "Criticality": "Mandatory", "Remark": "FG Filter Separator, FG Heater"},
-    {"System": "Nitrogen System (N2)", "Area": "GT Area / PR", "Description": "Purging fuel gas lines and inerting systems before maintenance.", "Criticality": "Mandatory", "Remark": "N2 Bottle Rack, Purge Panels"},
-    {"System": "GT MISC (Vents)", "Area": "Main Building", "Description": "Safe venting of process gases and drainage of lube oil leakages.", "Criticality": "Mandatory", "Remark": "GT Enclosure, Vent Fans"},
-    {"System": "Instrument Air (IA)", "Area": "All Areas", "Description": "Compressed air for pneumatic control valves and instruments.", "Criticality": "Operation", "Remark": "Air Compressors, IA Dryers"},
+    {"System": "Closed Cooling Water (CCW)", "Area": "Main Building / PR", "Description": "Cooling for GT/ST bearings and accessory equipment. Requires Power Receiving.", "Criticality": "Mandatory", "Related Equipment": "CCW Heat Exchangers, CCW Pumps", "Remark": ""},
+    {"System": "Aux. Steam & Hot Water (AS/HW)", "Area": "AB Bld / PR#3/4 / MB", "Description": "Anti-Icing for GT Intake to prevent freezing (Dec 31 Startup Basis).", "Criticality": "Mandatory", "Related Equipment": "Aux. Boiler, HW Pumps, HX", "Remark": ""},
+    {"System": "Fuel Gas System (FG)", "Area": "Main Building / GT Area", "Description": "Distributes filtered and regulated fuel gas to GT combustion system.", "Criticality": "Mandatory", "Related Equipment": "FG Filter Separator, FG Heater", "Remark": ""},
+    {"System": "Nitrogen System (N2)", "Area": "GT Area / PR", "Description": "Purging fuel gas lines and inerting systems before maintenance.", "Criticality": "Mandatory", "Related Equipment": "N2 Bottle Rack, Purge Panels", "Remark": ""},
+    {"System": "GT MISC (Vents)", "Area": "Main Building", "Description": "Safe venting of process gases and drainage of lube oil leakages.", "Criticality": "Mandatory", "Related Equipment": "GT Enclosure, Vent Fans", "Remark": ""},
+    {"System": "Instrument Air (IA)", "Area": "All Areas", "Description": "Compressed air for pneumatic control valves and instruments.", "Criticality": "Operation", "Related Equipment": "Air Compressors, IA Dryers", "Remark": ""},
+    {"System": "Demineralized Water (DW)", "Area": "Water Treatment / PR", "Description": "Supply of high-purity water for process requirements and cleaning.", "Criticality": "Highest", "Related Equipment": "DW Tank, DW Supply Pumps", "Remark": "외부 플랜트에서 임시 조달 검토 중"},
 ]
 
 # --- Presentation Layer ---
