@@ -237,12 +237,12 @@ strat_bottleneck = "Main Building Structure"
 
 # --- Essential Systems Data ---
 ESSENTIAL_SYSTEMS = [
-    {"System": "Closed Cooling Water (CCW)", "Area": "Main Building / PR", "Description": "Cooling for GT/ST bearings and accessory equipment. Requires Power Receiving.", "Criticality": "Mandatory", "Related Equipment": "CCW Heat Exchangers, CCW Pumps", "Remark": ""},
-    {"System": "Aux. Steam & Hot Water (AS/HW)", "Area": "AB Bld / PR#3/4 / MB", "Description": "Anti-Icing for GT Intake to prevent freezing (Dec 31 Startup Basis).", "Criticality": "Mandatory", "Related Equipment": "Aux. Boiler, HW Pumps, HX", "Remark": ""},
     {"System": "Fuel Gas System (FG)", "Area": "Main Building / GT Area", "Description": "Distributes filtered and regulated fuel gas to GT combustion system.", "Criticality": "Mandatory", "Related Equipment": "FG Filter Separator, FG Heater", "Remark": ""},
+    {"System": "Closed Cooling Water (CCW)", "Area": "Main Building / PR", "Description": "Cooling for GT/ST bearings and accessory equipment. Requires Power Receiving.", "Criticality": "Mandatory", "Related Equipment": "CCW Heat Exchangers, CCW Pumps", "Remark": ""},
+    {"System": "Instrument Air (IA)", "Area": "All Areas", "Description": "Compressed air for pneumatic control valves and instruments.", "Criticality": "Operation", "Related Equipment": "Air Compressors, IA Dryers", "Remark": ""},
+    {"System": "Aux. Steam & Hot Water (AS/HW)", "Area": "AB Bld / PR#3/4 / MB", "Description": "Anti-Icing for GT Intake to prevent freezing (Dec 31 Startup Basis).", "Criticality": "Mandatory", "Related Equipment": "Aux. Boiler, HW Pumps, HX", "Remark": ""},
     {"System": "Nitrogen System (N2)", "Area": "GT Area / PR", "Description": "Purging fuel gas lines and inerting systems before maintenance.", "Criticality": "Mandatory", "Related Equipment": "N2 Bottle Rack, Purge Panels", "Remark": ""},
     {"System": "GT MISC (Vents)", "Area": "Main Building", "Description": "Safe venting of process gases and drainage of lube oil leakages.", "Criticality": "Mandatory", "Related Equipment": "GT Enclosure, Vent Fans", "Remark": ""},
-    {"System": "Instrument Air (IA)", "Area": "All Areas", "Description": "Compressed air for pneumatic control valves and instruments.", "Criticality": "Operation", "Related Equipment": "Air Compressors, IA Dryers", "Remark": ""},
     {"System": "Demineralized Water (DW)", "Area": "Water Treatment / PR", "Description": "Supply of high-purity water for process requirements and cleaning.", "Criticality": "Highest", "Related Equipment": "DW Tank, DW Supply Pumps", "Remark": "Reviewing temporary supply via external purchase"},
 ]
 
@@ -387,7 +387,9 @@ with tab_dash:
     f6.markdown('<div class="flow-box"><b>6. Pre-Commissioning</b><br>CCW Flushing & FG Pig Cleaning<br>(2 Months)</div>', unsafe_allow_html=True)
 
     st.subheader("✅ Essential Systems for GT #11 Start-up")
-    st.table(pd.DataFrame(ESSENTIAL_SYSTEMS))
+    df_e = pd.DataFrame(ESSENTIAL_SYSTEMS)
+    df_e.index = np.arange(1, len(df_e) + 1)
+    st.table(df_e)
 
     st.subheader("💡 Solution & Infrastructure Dependency")
     st.markdown(f"""
@@ -444,17 +446,15 @@ with tab_rep:
     
     ## 5. Essential Systems & Criticality matrix
     
-    | Essential System | Area | Description | Criticality | Infrastructure Requirement |
+    | Essential System | Area | Description | Criticality | Related Equipment / Remark |
     | :--- | :--- | :--- | :--- | :--- |
-    | **Demi. Water** | WT / PR | High-purity water for process logic. | **Highest** | Tank/Pump readyness |
-    | **CCW** | MB / PR | Cooling for bearings/accessory equipment. | **Mandatory** | **Permanent Power** |
-    | **AS & HW** | AB / PR3,4 / GT | **Anti-Icing** for winter intake safety. | **Mandatory** | Aux. Boiler & HW Pumps |
-    | **Fuel Gas (FG)** | MB / GT Area | Regulated fuel gas supply to GT. | **Mandatory** | Path integrity |
-    | **Nitrogen (N2)** | GT Area / PR | Purging/inerting systems before maintenance. | **Mandatory** | N2 Bottle Rack |
-    | **GT MISC (Vents)** | Main Building | Safe venting of process gases/leakage. | **Mandatory** | GT Enclosure Fans |
-    | **Fire Fighting** | Electrical Area | Fire protection during Energizing. | **Safety** | Fire Pump & piping |
-    | **HVAC** | Electrical Area | Overheating prevention for Panels. | **Safety** | Duct & Unit Installation |
-    | **Instrument Air** | All Areas | Compressed air for pneumatic control logic. | **Operation** | Air Compressor & Dryers |
+    | **1. Fuel Gas** | MB / GT | High-pressure fuel distribution. | **Mandatory** | FG Filter Separator / Heater |
+    | **2. CCW** | MB / PR | Cooling for bearings/accessory equipment. | **Mandatory** | **Power Receiving Requirement** |
+    | **3. IA** | All | Instrument air for control valves. | **Operation** | Air Compressors / IA Dryers |
+    | **4. AS/HW** | AB / PR | Anti-Icing for winter startup. | **Mandatory** | **Aux. Boiler Integration** |
+    | **5. N2** | GT / PR | Purging and inerting for safety. | **Mandatory** | N2 Bottle Rack / Purge Panels |
+    | **6. GT MISC** | MB | Process gas venting and drainage. | **Mandatory** | GT Enclosure / Vent Fans |
+    | **7. Demi. Water**| WT / PR | Process water and cleaning supply. | **Highest** | **Temporary external purchase review** |
     
     > **⚠️ Note on Volumetric Reconciliation**:
     > There is a distinction between the **Total Area Construction Volume (22,938 DI)** on the dashboard and the **Start-up Essential Scope** above. 
