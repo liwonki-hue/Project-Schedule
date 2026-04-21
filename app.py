@@ -419,12 +419,12 @@ with tab_dash:
     total_ea = df_ess['EA'].sum()
     total_row = pd.DataFrame([{
         "System": "TOTAL",
-        "Area": "-",
-        "Description": "-",
+        "Area": "",
+        "Description": "",
         "DI": total_di,
         "EA": total_ea,
-        "Criticality": "-",
-        "Remark": "-"
+        "Criticality": "",
+        "Remark": ""
     }])
     df_ess = pd.concat([df_ess, total_row], ignore_index=True)
     
