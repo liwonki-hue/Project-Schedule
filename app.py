@@ -245,7 +245,7 @@ ESSENTIAL_SYSTEMS = [
     {"System": "Aux. Steam & Hot Water (AS/HW)", "Area": "AB Bld / PR#3/4 / MB", "Description": "Anti-Icing for GT Intake to prevent freezing (Dec 31 Startup Basis).", "Criticality": "Mandatory", "Related Equipment": "Aux. Boiler, HW Pumps, HX", "Remark": ""},
     {"System": "Nitrogen System (N2)", "Area": "GT Area / PR", "Description": "Purging fuel gas lines and inerting systems before maintenance.", "Criticality": "Mandatory", "Related Equipment": "N2 Bottle Rack, Purge Panels", "Remark": ""},
     {"System": "GT MISC (Vents)", "Area": "Main Building", "Description": "Safe venting of process gases and drainage of lube oil leakages.", "Criticality": "Mandatory", "Related Equipment": "GT Enclosure, Vent Fans", "Remark": ""},
-    {"System": "Demineralized Water (DW)", "Area": "Water Treatment / PR", "Description": "Supply of high-purity water for process requirements and cleaning.", "Criticality": "Highest", "Related Equipment": "DW Tank, DW Supply Pumps", "Remark": "Reviewing temporary supply via external purchase"},
+    {"System": "Demineralized Water (DW)", "Area": "Water Treatment / PR", "Description": "Supply of high-purity water for process requirements and cleaning.", "Criticality": "Highest", "Related Equipment": "DW Tank, DW Supply Pumps", "Remark": "Reviewing temporary demi. water supply via other power plant (by INTEGRA)"},
 ]
 
 # --- Presentation Layer ---
@@ -456,7 +456,7 @@ with tab_rep:
     | **4. AS/HW** | AB / PR | Anti-Icing for winter startup. | **Mandatory** | **Aux. Boiler Integration** |
     | **5. N2** | GT / PR | Purging and inerting for safety. | **Mandatory** | N2 Bottle Rack / Purge Panels |
     | **6. GT MISC** | MB | Process gas venting and drainage. | **Mandatory** | GT Enclosure / Vent Fans |
-    | **7. Demi. Water**| WT / PR | Process water and cleaning supply. | **Highest** | **Temporary external purchase review** |
+    | **7. Demi. Water**| WT / PR | Process water and cleaning supply. | **Highest** | **Temporary supply via other power plant (by INTEGRA)** |
     
     > **⚠️ Note on Volumetric Reconciliation**:
     > There is a distinction between the **Total Area Construction Volume (22,938 DI)** on the dashboard and the **Start-up Essential Scope** above. 
