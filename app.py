@@ -502,7 +502,7 @@ with tab_rep:
     The GT #11 startup is governed not only by piping progress but also by critical infrastructure and safety prerequisites.
     
     ### A. Permanent Power Receiving
-    Power Receiving is a **non-negotiable milestone** that must occur before the operation of all auxiliary equipment, including CCW Pumps, Air Compressors, and HW Pumps.
+    Power Receiving is a **non-negotiable milestone** that must occur before the operation of all BOP equipment, including CCW, HW Pumps, and Air Compressors.
     - **Pre-requisites**: Installation of AIS (Air Insulated Switchgear), Transformers, Electrical Panels, and Main Cabling must be finalized.
     - **Safety Priority**: Energizing cannot proceed without the completion of **Fire Fighting (FF)** and **HVAC** systems to mitigate the risk of fire and equipment overheating.
     - **Impact**: Power Receiving must be completed *prior* to the CCW Flushing phase to ensure pump functionality.
