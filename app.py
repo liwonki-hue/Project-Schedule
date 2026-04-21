@@ -160,13 +160,14 @@ for area in AREA_DATA.keys():
     d_rel = datetime.date(2026, 6, 1)
     if "#3" in area: d_rel = datetime.date(2026, 5, 20)
     if "GT #11" in area: d_rel = datetime.date(2026, 7, 5)
+    if "Main Building Structure" in area: d_rel = datetime.date(2026, 9, 1)
     rel_dates[area] = st.sidebar.date_input(area, d_rel)
 
 st.sidebar.markdown('<hr style="margin: 5px 0;">', unsafe_allow_html=True)
 with st.sidebar.expander("Manpower Setup", expanded=True):
-    total_manpower_teams = st.number_input("Piping Work Teams", 1, 100, 40)
-    prod_di = st.slider("DI/Team-Day", 3.0, 30.0, 12.0)
-    prod_ea_ratio = st.slider("EA/DI Ratio", 0.1, 1.0, 0.3)
+    total_manpower_teams = st.number_input("Piping Work Teams", 1, 100, 50)
+    prod_di = st.slider("DI/Team-Day", 3.0, 30.0, 14.96)
+    prod_ea_ratio = st.slider("EA/DI Ratio", 0.1, 1.0, 0.4)
     priority = st.slider("EP Priority (%)", 0, 100, 70)
 
 # --- Simulation Logic ---
