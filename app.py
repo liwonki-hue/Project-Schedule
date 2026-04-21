@@ -439,7 +439,7 @@ with tab_rep:
     st.markdown(f"""
     <div class="report-card">
     
-    # GT #11 EARLY POWER PIPING & INFRASTRUCTURE STRATEGY REPORT
+    # GT #11 EARLY POWER PIPING REPORT
     **Date**: {datetime.date.today()} | **Operation Milestone**: Dec 31, 2026
     
     ---
