@@ -481,10 +481,9 @@ with tab_rep:
     | **6. GT MISC** | MB | Process gas venting and drainage. | **Mandatory** | GT Enclosure / Vent Fans |
     | **7. Demi. Water**| WT / PR | Process water and cleaning supply. | **Highest** | **Temporary supply via other power plant (by INTEGRA)** |
     
-    > **⚠️ Note on Volumetric Reconciliation**:
-    > There is a distinction between the **Total Area Construction Volume (22,938 DI)** on the dashboard and the **Start-up Essential Scope** above. 
-    > 1. **Field Erection Basis**: All DI values represent **Site Field Erection (Final Jointing)** only. Shop Fabrication is excluded.
-    > 2. **Priority**: Resource allocation is prioritized for these systems to compress the schedule.
+    > **⚠️ Volumetric Note**: Total Area Construction Volume (**23,595 DI**) differs from the **Essential Start-up Scope** above. 
+    > 1. **Field Erection Only**: DI values represent site welding/installation only (excl. Shop Fab).
+    > 2. **Volume Update**: Current figures reflect the recent increase in project scope.
     
     - **Integrated Approach**: Welding and NDT for these systems are prioritized for the Main Building and Pipe Rack #3/#4 paths.
     
