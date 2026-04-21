@@ -536,7 +536,14 @@ with tab_rep:
     
     - **Integrated Approach**: Welding and NDT for these systems are prioritized for the Main Building and Pipe Rack #3/#4 paths.
     
-    ## 6. Strategic Risk & Implementation Constraints
+    ## 6. Action Items for On-time Completion
+    
+    1. **Safety Priority**: Prioritize Fire Fighting & HVAC in electrical rooms to allow Energizing without fire/overheating risk.
+    2. **Power Receiving**: Complete AIS/Transformer & Cable installation to enable Power Receiving before CCW Flushing.
+    3. **Structural Early Handover**: Accelerate Pipe Rack & MB Structure delivery through additional manpower and crash work.
+    4. **Double Shift**: Implement 24/7 welding for Main Building Structural Header-to-Branch transitions to maximize daily output.
+
+    ## 7. Strategic Risk & Implementation Constraints
     
     ### A. Piping Isolation & Loop Integrity (Flushing Requirements)
     - **Issue**: To enable Early Power for GT #11, utility lines (CCW, AS/HW, etc.) within the Main Building must be functional. However, the plant's integrated design normally requires all units to be interconnected.
@@ -552,13 +559,6 @@ with tab_rep:
     - **Issue**: The current power plant design is predicated on integrated system operation. Isolating Unit #1 for early startup is a deviation from the core Design Concept.
     - **Expected Impact**: Fragmentation of header piping work will lead to severe resource inefficiencies and spatial conflicts. This non-sequential execution is forecasted to cause a **minimum 3-month delay** in the overall project completion (Units #2~4). Furthermore, GT #11 must eventually be **shut down** in the future to allow for final header integrations.
     - **Proposed Strategy**: While the project team is proceeding per client directive, the **Absolute Risk to Total Project COD** must be formally communicated to the client. Early Unit #1 power generation provides a short-term benefit but incurs a significantly greater long-term penalty on the overall project assets.
-
-    ## 7. Action Items for On-time Completion
-    
-    1. **Safety Priority**: Prioritize Fire Fighting & HVAC in electrical rooms to allow Energizing without fire/overheating risk.
-    2. **Power Receiving**: Complete AIS/Transformer & Cable installation to enable Power Receiving before CCW Flushing.
-    3. **Structural Early Handover**: Accelerate Pipe Rack & MB Structure delivery through additional manpower and crash work.
-    4. **Double Shift**: Implement 24/7 welding for Main Building Structural Header-to-Branch transitions to maximize daily output.
     
     ---
     *Disclaimer: Report updated to reflect Dec 31 Operation basis, Anti-Icing Mandatory requirement, and Strategic Risks associated with early Unit #1 power generation.*
