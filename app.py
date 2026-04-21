@@ -237,12 +237,13 @@ strat_bottleneck = "Main Building Structure"
 
 # --- Essential Systems Data ---
 ESSENTIAL_SYSTEMS = [
-    {"System": "Closed Cooling Water (CCW)", "Area": "Main Building / PR", "Description": "Provides cooling water to GT/ST bearings and accessory equipment.", "Criticality": "Highest", "Remark": "CCW Heat Exchangers, CCW Pumps"},
-    {"System": "Fuel Gas System (FG)", "Area": "Main Building / GT Area", "Description": "Distributes filtered and regulated fuel gas to GT combustion system.", "Criticality": "Mandatory", "Remark": "FG Filter Separator, FG Heater, Gas Turbines"},
-    {"System": "Demineralized Water (DW)", "Area": "Water Treatment / PR", "Description": "Supply of high-purity water for process requirements and cleaning.", "Criticality": "Mandatory", "Remark": "DW Tank, DW Supply Pumps"},
-    {"System": "Nitrogen System (N2)", "Area": "GT Area / PR", "Description": "Used for purging fuel gas lines and inerting systems before maintenance.", "Criticality": "Mandatory", "Remark": "N2 Bottle Rack, Purge Panels"},
-    {"System": "GT MISC (Vents)", "Area": "Main Building", "Description": "Safe venting of process gases and drainage of lube oil leakages.", "Criticality": "Mandatory", "Remark": "GT Enclosure, Vent Fans, Lube Oil Mist Eliminator"},
-    {"System": "Instrument Air (IA)", "Area": "All Areas", "Description": "Provides compressed air for pneumatic control valves and instruments.", "Criticality": "Operation", "Remark": "Air Compressors, IA Dryers"},
+    {"System": "Demineralized Water (DW)", "Area": "Water Treatment / PR", "Description": "Supply of high-purity water for process requirements and cleaning.", "Criticality": "Highest", "Remark": "DW Tank, DW Supply Pumps"},
+    {"System": "Closed Cooling Water (CCW)", "Area": "Main Building / PR", "Description": "Cooling for GT/ST bearings and accessory equipment. Requires Power Receiving.", "Criticality": "Mandatory", "Remark": "CCW Heat Exchangers, CCW Pumps"},
+    {"System": "Aux. Steam & Hot Water (AS/HW)", "Area": "AB Bld / PR#3/4 / MB", "Description": "Anti-Icing for GT Intake to prevent freezing (Dec 31 Startup Basis).", "Criticality": "Mandatory", "Remark": "Aux. Boiler, HW Pumps, HX"},
+    {"System": "Fuel Gas System (FG)", "Area": "Main Building / GT Area", "Description": "Distributes filtered and regulated fuel gas to GT combustion system.", "Criticality": "Mandatory", "Remark": "FG Filter Separator, FG Heater"},
+    {"System": "Nitrogen System (N2)", "Area": "GT Area / PR", "Description": "Purging fuel gas lines and inerting systems before maintenance.", "Criticality": "Mandatory", "Remark": "N2 Bottle Rack, Purge Panels"},
+    {"System": "GT MISC (Vents)", "Area": "Main Building", "Description": "Safe venting of process gases and drainage of lube oil leakages.", "Criticality": "Mandatory", "Remark": "GT Enclosure, Vent Fans"},
+    {"System": "Instrument Air (IA)", "Area": "All Areas", "Description": "Compressed air for pneumatic control valves and instruments.", "Criticality": "Operation", "Remark": "Air Compressors, IA Dryers"},
 ]
 
 # --- Presentation Layer ---
@@ -255,10 +256,17 @@ with tab_dash:
     with p_col:
         add_print_button()
     
+    # Major Constraints Alert
     st.markdown(f"""
-        <div style="background-color:#e0f2f1; padding:18px; border-radius:10px; border-left:8px solid #00897b; margin-bottom:20px;">
-            <span style="font-size:1.35rem; font-weight:bold; color:#004d40;">
-                🚨 Ultimate Bottleneck in timeline : {strat_bottleneck} (Structure Access for header piping installation Constraint) | Target Float: {net_float} Days
+        <div style="background-color:#fff3e0; padding:15px; border-radius:10px; border-left:8px solid #ff9800; margin-bottom:10px;">
+            <span style="font-size:1.15rem; font-weight:bold; color:#e65100;">
+                ⚠️ Major Infrastructure Constraint: Permanent Power Receiving must be completed before CCW/HW Pump operation. 
+                Energizing requires FF (Fire Fighting) & HVAC installation to prevent overheating/fire.
+            </span>
+        </div>
+        <div style="background-color:#e0f2f1; padding:15px; border-radius:10px; border-left:8px solid #00897b; margin-bottom:20px;">
+            <span style="font-size:1.15rem; font-weight:bold; color:#004d40;">
+                🚨 Ultimate Bottleneck in timeline : {strat_bottleneck} (Structure Access for header piping installation) | Target Float: {net_float} Days
             </span>
         </div>
     """, unsafe_allow_html=True)
@@ -354,23 +362,25 @@ with tab_dash:
     # Divider removed to save space
     
     st.subheader("🔄 Construction Work Flow")
-    f1, f2, f3, f4, f5 = st.columns(5)
-    f1.markdown('<div class="flow-box"><b>1. Structure</b><br>Handover</div>', unsafe_allow_html=True)
-    f2.markdown('<div class="flow-box"><b>2. Access</b><br>Scaffolding (2 Weeks)</div>', unsafe_allow_html=True)
-    f3.markdown('<div class="flow-box"><b>3. Erection</b><br>Header & Branches Piping</div>', unsafe_allow_html=True)
-    f4.markdown('<div class="flow-box"><b>4. Punch & Test</b><br>Pressure Test & Punch (2 Weeks)</div>', unsafe_allow_html=True)
-    f5.markdown('<div class="flow-box"><b>5. Pre-Commissioning</b><br>CCW Flushing & FG Pig Cleaning<br>(2 Months)</div>', unsafe_allow_html=True)
+    f1, f2, f3, f4, f5, f6 = st.columns(6)
+    f1.markdown('<div class="flow-box"><b>1. Fabrication</b><br>Spool & Support Fabrication</div>', unsafe_allow_html=True)
+    f2.markdown('<div class="flow-box"><b>2. Structure</b><br>Handover</div>', unsafe_allow_html=True)
+    f3.markdown('<div class="flow-box"><b>3. Access</b><br>Scaffolding (2 Weeks)</div>', unsafe_allow_html=True)
+    f4.markdown('<div class="flow-box"><b>4. Erection</b><br>Header & Branches Piping</div>', unsafe_allow_html=True)
+    f5.markdown('<div class="flow-box"><b>5. Punch & Test</b><br>Pressure Test & Punch (2 Weeks)</div>', unsafe_allow_html=True)
+    f6.markdown('<div class="flow-box"><b>6. Pre-Commissioning</b><br>CCW Flushing & FG Pig Cleaning<br>(2 Months)</div>', unsafe_allow_html=True)
 
     st.subheader("✅ Essential Systems for GT #11 Start-up")
     st.table(pd.DataFrame(ESSENTIAL_SYSTEMS))
 
-    st.subheader("💡 Solution to Meet Target MC (Sep 16, 2026)")
+    st.subheader("💡 Solution & Infrastructure Dependency")
     st.markdown(f"""
         <div class="solution-card">
             <div class="solution-content">
-                <div style="margin-bottom: 5pt;">1. <b>Parallel Resource Injection</b>: Increase total teams to 40+ upon MB Steel release to compress branch erection.</div>
-                <div style="margin-bottom: 5pt;">2. <b>Double Shift (Night Work)</b>: Implement 24/7 welding for Header-to-Branch transitions in Main Building Structural area.</div>
-                <div>3. <b>Pre-spool Staging</b>: Complete all item-punching at ground level *before* crane lifting to minimize high-elevation work time.</div>
+                <div style="margin-bottom: 5pt;">1. <b>Permanent Power First</b>: Complete AIS/Transformer & Cable installation to enable Power Receiving before CCW Flushing.</div>
+                <div style="margin-bottom: 5pt;">2. <b>Anti-Icing Readiness</b>: Accelerate AS/HW piping path (Aux. Boiler -> PR#4 -> PR#3 -> GT#11) for Dec 31 Startup.</div>
+                <div style="margin-bottom: 5pt;">3. <b>Safety Interlock</b>: Prioritize Fire Fighting & HVAC in electrical rooms to allow Energizing without fire/overheating risk.</div>
+                <div>4. <b>Double Shift</b>: Implement 24/7 welding for Main Building Structural Header-to-Branch transitions.</div>
             </div>
         </div>
     """, unsafe_allow_html=True)
@@ -386,54 +396,46 @@ with tab_rep:
     st.markdown(f"""
     <div class="report-card">
     
-    # GT #11 EARLY POWER PIPING STRATEGY REPORT
-    **Date**: {datetime.date.today()} | **Objective**: MC by Sep 16, 2026
+    # GT #11 EARLY POWER PIPING & INFRASTRUCTURE STRATEGY REPORT
+    **Date**: {datetime.date.today()} | **Operation Milestone**: Dec 31, 2026
     
     ---
     
-    ## 1. Project Sequence & Site Status
-    The successful achievement of the GT #11 Early Power milestone relies on a strictly linear construction logic governed by structural prerequisites. 
-    ### A. Current Erection Status
-    - **GT #11 Installation**: Currently at **50% progress**. Base Equipment Alignment and Accessory Device Installation are ongoing.
-    - **HRSG #11 Installation**: Currently in active progress. 
+    ## 1. Project Sequence & Major Infrastructure Constraints
+    The GT #11 startup is governed not only by piping progress but also by critical infrastructure and safety prerequisites.
+    
+    ### A. Permanent Power Receiving (The Power Milestone)
+    Power Receiving is a **non-negotiable milestone** that must occur before the operation of all auxiliary equipment, including CCW Pumps, Air Compressors, and HW Pumps.
+    - **Pre-requisites**: Installation of AIS (Air Insulated Switchgear), Transformers, Electrical Panels, and Main Cabling must be finalized.
+    - **Safety Dependency**: Energizing cannot proceed without the completion of **Fire Fighting (FF)** and **HVAC** systems to mitigate the risk of fire and equipment overheating.
+    - **Impact**: Power Receiving must be completed *prior* to the CCW Flushing phase to ensure pump functionality.
+
     ### B. Strategic Prerequisite: Main Building Steel
-    The most critical technical lag at this stage is the **Main Building Steel Structure**. According to site logic:
+    The Main Building Steel Structure remains the definitive piping bottleneck, as branch piping distributions depend on MB Structure certification.
     
-    1. **GT & HRSG equipment installation** must be finalized first.
-    2. **Main Building steel** is then erected, providing the path for **Header Piping**.
-    3. **Branch piping** then distributes from MB Structure -> HRSG #11 -> GT #11.
-    4. Consequently, **{strat_bottleneck}** release is the definitive bottleneck.
-    
-    ## 2. Technical Constraints: Header & Branch Access
-    The simulation models identified the strategic importance of the **Header-to-Branch** transition:
-    - **Interface Access**: Header piping originating from external racks cannot enter the MB area until the structure is certified.
-    - **Lag Impact**: Any delay in MB Steel release exponentially compresses the window for branch erection.
+    ## 2. Anti-Icing System: AS & HW Strategy
+    For the target operation date of **Dec 31, 2026**, the Anti-Icing system is mandatory to prevent GT Air Intake freezing.
+    - **System Logic**: Utilizes Steam from the **Aux. Boiler** to heat water, which is then circulated via **Hot Water (HW) Supply Pumps** and Heat Exchangers.
+    - **Critical Routing**: The AS/HW piping path encompasses: **Aux. Boiler Building & HW Pump House → PR #4 → PR #3 → MB Structure → GT #11**.
+    - **Priority Scope**: Installation of Unit B0 and B1 piping volumes is mandatory for this system to be functional for the winter startup.
     
     ## 3. Commissioning Strategy: CCW & Fuel Gas
     The 2-month window post-MC is driven by high-velocity flushing of the CCW and clean-pigging of the FG lines.
     
-    ## 4. Work Period & Resource Allocation Logic (Deep Dive)
-    The simulation models the deployment of **{total_manpower_teams} Dedicated Work Teams** through a "Volume-Weight Resource Distribution" engine.
-    - **Workspace Constraint (Bottleneck)**: 
-        - **Main Building Structure** is restricted to a **MAX of 6 Work Teams** due to space limitations. 
-        - Even with high volume, the maximum output is capped at [6 Work Teams x {prod_di} DI/Day] = **{6 * prod_di} DI/Day**.
-    - **Resource Distribution Formula**: 
-        - `Assigned Work Teams per Area = min( (Area Volume / Total Volume) * {total_manpower_teams}, Space Cap )`
-        - This ensures that while {total_manpower_teams} work teams are active globally, they are not overcrowded in a single area.
-    - **Duration Calculation**:
-        - `Duration = [Total Area DI] / ( [Assigned Work Teams] x {prod_di} DI/Day )`
+    ## 4. Resource Allocation Logic (Deep Dive)
+    - **Workspace Constraint**: Manpower in Main Building Structure remains capped at **6 teams** due to elevation and space safety constraints.
+    - **Dynamic Redistribution**: Teams will be prioritized for AS/HW and FG/CCW essential systems to meet the Dec 31 milestone.
     
-    ## 5. Essential Systems for GT #11 Start-up
-    To achieve Early Power, the following core systems must reach Mechanical Completion (MC) and undergo pre-commissioning.
+    ## 5. Essential Systems & Criticality matrix
     
-    | Essential System | Area | Description | Criticality | Remark (Equipment) |
+    | Essential System | Area | Description | Criticality | Infrastructure Requirement |
     | :--- | :--- | :--- | :--- | :--- |
-    | **CCW** | Main Building / PR | Cooling for GT/ST bearings/accessory equipment. | **Highest** | CCW Heat Exchangers, Pumps |
-    | **Fuel Gas (FG)** | MB / GT Area | Regulated fuel gas supply to GT combustion. | **Mandatory** | FG Filter Separators, Heaters |
-    | **Demineralized Water** | WT / PR | High-purity water for cleaning/process. | **Mandatory** | DW Tanks, Supply Pumps |
-    | **Nitrogen (N2)** | GT Area / PR | Purging/inerting systems before maintenance. | **Mandatory** | N2 Bottle Racks, Purge Panels |
-    | **GT MISC (Vents)** | Main Building | Safe venting of gases / Oil drainage. | **Mandatory** | GT Enclosure, Vent Fans |
-    | **Instrument Air** | All Areas | Compressed air for pneumatic control logic. | **Operation** | Air Compressors, Dryers |
+    | **Demi. Water** | WT / PR | High-purity water for process logic. | **Highest** | Tank/Pump readyness |
+    | **CCW** | MB / PR | Cooling for bearings/accessory equipment. | **Mandatory** | **Permanent Power** |
+    | **AS & HW** | AB / PR3,4 / GT | **Anti-Icing** for winter intake safety. | **Mandatory** | Aux. Boiler & HW Pumps |
+    | **Fuel Gas (FG)** | MB / GT Area | Regulated fuel gas supply to GT. | **Mandatory** | Path integrity |
+    | **Fire Fighting** | Electrical Area | Fire protection during Energizing. | **Safety** | Fire Pump & piping |
+    | **HVAC** | Electrical Area | Overheating prevention for Panels. | **Safety** | Duct & Unit Installation |
     
     > **⚠️ Note on Volumetric Reconciliation**:
     > There is a distinction between the **Total Area Construction Volume (22,938 DI)** on the dashboard and the **Start-up Essential Scope** above. 
@@ -443,12 +445,13 @@ with tab_rep:
     - **Integrated Approach**: Welding and NDT for these systems are prioritized for the Main Building and Pipe Rack #3/#4 paths.
     
     ## 6. Summary of Strategic Actions
-    1. **MB Steel Prioritization**: Pressure Civil/Steel subcontractors for the earliest possible handover.
-    2. **Branch Pre-positioning**: Accelerate pre-fabrication of branch spools to ensure 100% material readiness.
-    3. **Bypass Pre-fab**: Finalize temporary CCW bypass pipes during the August erection phase.
+    1. **Power Receiving Interlock**: Synchronize Electrical (AIS/Cable) and Piping (CCW) schedules.
+    2. **Safety Systems Concurrent Work**: Ensure FF and HVAC installation in electrical rooms overlaps with cabling to avoid energizing delays.
+    3. **AS/HW Path Acceleration**: Prioritize PR#4 and PR#3 paths to secure Anti-Icing before the onset of winter freezing.
+    4. **Winterization Readiness**: Complete all B0/B1 scope spools at shop to minimize field welding during cold conditions.
     
     ---
-    *Disclaimer: Report updated to reflect current site status (GT 50% Alignment) and Resource-Constrained Simulation (Max 5 Work Teams in Main Building).*
+    *Disclaimer: Report updated to reflect Dec 31 Operation basis, Anti-Icing Mandatory requirement, and Power Receiving/FF/HVAC Interlock constraints.*
     
     </div>
     """, unsafe_allow_html=True)
