@@ -259,8 +259,8 @@ strat_bottleneck = "Main Building Structure"
 
 # --- Essential Systems Data ---
 ESSENTIAL_SYSTEMS = [
-    {"System": "Fuel Gas & FGH System", "Area": "MB / GT / FGH", "Description": "FGSS System, Performance Heater & Final Filter", "DI": 2480, "EA": 610, "Criticality": "Mandatory", "Equipment": "Performance Heater path.", "Remark": ""},
-    {"System": "Closed Cooling Water (CCW)", "Area": "MB / PR / PH#1 / FFC#1", "Description": "PH#1 & FFC#1 Integrated", "DI": 4120, "EA": 980, "Criticality": "Mandatory", "Equipment": "Brg & FFC cooling.", "Remark": ""},
+    {"System": "Fuel Gas & FGH System", "Area": "MB / GT / FGH", "Description": "FGSS System, Performance Heater & Final Filter", "DI": 2480, "EA": 610, "Criticality": "Mandatory", "Equipment": "Supply Fuel Gas to GT", "Remark": ""},
+    {"System": "Closed Cooling Water (CCW)", "Area": "MB / PR / PH#1 / FFC#1", "Description": "PH#1 & FFC#1 Integrated", "DI": 4120, "EA": 980, "Criticality": "Mandatory", "Equipment": "Supply & Return of CCW for equipment cooling down", "Remark": ""},
     {"System": "Instrument Air (IA)", "Area": "All Areas", "Description": "Air Compressors, IA Dryers", "DI": 1150, "EA": 290, "Criticality": "Operation", "Equipment": "Instrument air supply.", "Remark": ""},
     {"System": "Aux. Steam & Hot Water (AS/HW)", "Area": "PR#3/4 / MB", "Description": "Aux. Boiler, Hot Water Supply Pump, Heat Exchanger", "DI": 2650, "EA": 660, "Criticality": "Mandatory", "Equipment": "Anti-Icing path.", "Remark": ""},
     {"System": "Nitrogen System (N2)", "Area": "GT Area / PR", "Description": "N2 Storage Tank, N2 Supply System", "DI": 320, "EA": 90, "Criticality": "Mandatory", "Equipment": "Purging and inerting.", "Remark": ""},
@@ -519,8 +519,8 @@ with tab_rep:
     
     | Essential System | Area | Description | Piping (DI) | Support (EA) | Criticality | Relevant Equipment | Remark |
     | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-    | **1. Fuel Gas & FGH** | MB/GT/FGH | FGSS System, Performance Heater & Final Filter | 2,480 | 610 | **Mandatory** | Performance Heater path. | |
-    | **2. CCW** | MB/PR/PH1 | PH#1 & FFC#1 Integrated | 4,120 | 980 | **Mandatory** | Brg & FFC cooling. | |
+    | **1. Fuel Gas & FGH** | MB/GT/FGH | FGSS System, Performance Heater & Final Filter | 2,480 | 610 | **Mandatory** | Supply Fuel Gas to GT | |
+    | **2. CCW** | MB/PR/PH1 | PH#1 & FFC#1 Integrated | 4,120 | 980 | **Mandatory** | Supply & Return of CCW for equipment cooling down | |
     | **3. IA** | All | Air Compressors, IA Dryers | 1,150 | 290 | **Operation** | Instrument air supply. | |
     | **4. AS/HW** | PR#3/4/AB | Aux. Boiler, Hot Water Supply Pump, Heat Exchanger | 2,650 | 660 | **Mandatory** | Anti-Icing path. | |
     | **5. N2** | GT / PR | N2 Storage Tank, N2 Supply System | 320 | 90 | **Mandatory** | Purging and inerting. | |
