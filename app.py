@@ -500,8 +500,8 @@ with tab_rep:
     ### B. Major Bottleneck Section: Main Building Steel Structure
     The Main Building Steel Structure remains the definitive piping bottleneck, as branch piping distributions depend on MB Structure certification.
     
-    ## 2. Commissioning Strategy: CCW & Fuel Gas System
-    - **Technical Pre-requisites**: Formal completion of piping, supports, punch clearance, and pressure tests.
+    ## 2. Pre-Commissioning Activity: CCW & Fuel Gas System
+    - **Prior to Pre-Commissioning**: Formal completion of piping, supports, punch clearance, and pressure tests.
     - **Operational Readiness**: Pre-fabricate temporary items (Launchers, Receivers) for immediate post-test installation.
     - **Pre-Commissioning**: The 2-month window post-MC is driven by high-velocity flushing of the CCW and clean-pigging of the FG lines.
     
