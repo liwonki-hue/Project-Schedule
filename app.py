@@ -844,7 +844,7 @@ with tab_rev:
     # --- Table + Chart ---
     rl, rr = st.columns([4.5, 5.5])
     with rl:
-        st.subheader("📊 Revision Milestone Forecast (All 10 Areas)")
+        st.subheader("📊 Detailed Milestone Forecast")
         st.markdown('<div style="height: 40px;"></div>', unsafe_allow_html=True)
         rev_ordered = rev_df.set_index("Area").reindex(AREA_DISPLAY_ORDER).reset_index()
         rev_df_view = rev_ordered.copy()
@@ -878,7 +878,7 @@ with tab_rev:
         )
 
     with rr:
-        st.subheader("📅 Revision Construction Path")
+        st.subheader("📅 Construction Path")
         rev_chart_df = rev_df.set_index("Area").reindex(AREA_DISPLAY_ORDER).reset_index()
         rev_fig = px.timeline(
             rev_chart_df, x_start="Handover", x_end="Pressure Test Finish", y="Area",
