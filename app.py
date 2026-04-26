@@ -812,7 +812,7 @@ with tab_rev:
     # --- Header ---
     rv_c1, rv_c2 = st.columns([8.2, 1.8])
     with rv_c1:
-        st.markdown('<h1 style="font-size: 1.8rem; margin: 0; padding: 0;">📊 Revision: GT #11 + GT #12 Combined Scope Analysis</h1>', unsafe_allow_html=True)
+        st.markdown('<h1 style="font-size: 1.8rem; margin: 0; padding: 0;">📊 GT #11 + GT #12 Combined Operation</h1>', unsafe_allow_html=True)
     with rv_c2:
         add_print_button()
 
@@ -940,7 +940,7 @@ with tab_rev:
     rf5.markdown('<div class="flow-box"><b>5. Punch & Test</b><br>Pressure Test & Punch<br>(2 Weeks)</div>', unsafe_allow_html=True)
     rf6.markdown('<div class="flow-box"><b>6. Pre-Commissioning</b><br>CCW Flushing & FG Pig Cleaning<br>(2 Months)</div>', unsafe_allow_html=True)
 
-    st.subheader("✅ Essential Systems for GT #11 & GT #12 Start-up (Revised)")
+    st.subheader("✅ Essential Systems for GT #11 & GT #12 Start-up")
 
     df_ess_rev = pd.DataFrame(ESSENTIAL_SYSTEMS)
 
