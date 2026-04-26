@@ -125,24 +125,28 @@ def create_revision_excel(rev_df, mc_target):
     chart.add_data(dur, titles_from_data=True)
     chart.set_categories(cats)
 
-    # Offset series → white (invisible)
-    chart.series[0].graphicalProperties.solidFill = "FFFFFF"
-    chart.series[0].graphicalProperties.line.solidFill = "FFFFFF"
-    # Duration series → green
-    chart.series[1].graphicalProperties.solidFill = "22C55E"
-    chart.series[1].graphicalProperties.line.solidFill = "22C55E"
+    # Offset series → white (invisible), Duration series → green
+    try:
+        from openpyxl.drawing.fill import ColorChoice
+        chart.series[0].graphicalProperties.solidFill = "FFFFFF"
+        chart.series[1].graphicalProperties.solidFill = "22C55E"
+    except Exception:
+        pass  # colour setting is cosmetic; skip if API differs
 
-    chart.y_axis.scaling.orientation = "maxMin"   # Area #1 at top
+    try:
+        from openpyxl.chart.axis import Scaling
+        chart.y_axis.scaling = Scaling(orientation="maxMin")
+    except Exception:
+        pass  # Area order fallback
+
     chart.x_axis.title = f"Days from {ref_date.strftime('%Y-%m-%d')}"
     chart.y_axis.title = ""
-    chart.legend = None
 
     ws.add_chart(chart, "I1")
 
     buf = io.BytesIO()
     wb.save(buf)
-    buf.seek(0)
-    return buf
+    return buf.getvalue()   # return bytes, not BytesIO
 
 # --- Global Layout Config ---
 st.set_page_config(page_title="Strategic Piping Management", layout="wide", page_icon="🏗️")
