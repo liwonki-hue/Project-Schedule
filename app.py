@@ -160,7 +160,7 @@ st.markdown("""
     
     /* Remove Backgrounds & Borders */
     .report-card, .flow-box, .solution-card { 
-        background: transparent !important; 
+        background: transparent !important; ff
         border: none !important; 
         padding: 5px !important;
         color: black !important;
@@ -526,7 +526,7 @@ ESSENTIAL_SYSTEMS = [
 ]
 
 # --- Presentation Layer ---
-tab_dash, tab_rep1, tab_rev, tab_rep2 = st.tabs(["📊 Revision (GT #11)", "📋 Technical Report(1)", "📊 Revision (GT#11 + GT#12)", "📋 Technical Report(2)"])
+tab_rev, tab_rep2, tab_dash, tab_rep1 = st.tabs(["Revision (GT#11 + GT#12)", "Technical Report(2)", "Revision (GT #11)", "Technical Report(1)"])
 
 with tab_dash:
     # Custom CSS for Table Alignment & Column Widths
